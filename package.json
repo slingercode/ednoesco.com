@@ -15,23 +15,26 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "update-dependencies": "yarn add tailwindcss@latest postcss@latest autoprefixer@latest next@latest react react-dom && yarn add --dev @types/react eslint@latest eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest eslint-plugin-react-hooks@latest"
   },
   "dependencies": {
     "autoprefixer": "^10.2.6",
     "next": "^10.2.3",
     "next-themes": "^0.0.14",
     "postcss": "^8.3.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "tailwindcss": "^2.1.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
-    "eslint": "^7.24.0",
+    "@types/react": "^17.0.9",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.3.2"
   }
 }
