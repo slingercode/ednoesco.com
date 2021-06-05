@@ -1,6 +1,11 @@
 import Head from 'next/head';
 
-const Container = ({ title, children }) => (
+type Props = {
+  title?: string;
+  children: React.ReactNode;
+};
+
+const Container = ({ title, children }: Props) => (
   <>
     <Head>
       <title>{title}</title>
