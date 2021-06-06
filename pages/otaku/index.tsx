@@ -2,26 +2,36 @@ import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
 import Container from '@/components/Container';
-import Text from '@/components/notion/Text';
+import Article from '@/components/otaku/Article';
 import { getDatabase } from '@/lib/notion';
 
 const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Container>
     {posts.map((post) => (
-      <div key={post.id}>
-        <Text
-          id={post.id}
-          text={
-            post.properties.Name.type === 'title'
-              ? post.properties.Name.title
-              : null
-          }
-        />
-
-        <Link href={`/otaku/${post.id}`}>
-          <a>Dale</a>
-        </Link>
-      </div>
+      <Article
+        key={post.id}
+        id={post.id}
+        text={
+          post.properties.Name.type === 'title'
+            ? post.properties.Name.title
+            : null
+        }
+        volumen={
+          post.properties.Volumen.type === 'number'
+            ? post.properties.Volumen.number.toString()
+            : ''
+        }
+        author={
+          post.properties.Author.type === 'rich_text'
+            ? post.properties.Author.rich_text
+            : null
+        }
+        owned={
+          post.properties.Owned.type === 'checkbox'
+            ? post.properties.Owned.checkbox
+            : false
+        }
+      />
     ))}
   </Container>
 );

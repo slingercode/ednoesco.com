@@ -31,7 +31,14 @@ const Text = ({ id, text }: Props) => {
             ])}
           >
             {text.link ? (
-              <a href={text.link.url}>{text.content}</a>
+              <a
+                className="text-blue-500"
+                href={text.link.url}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {text.content}
+              </a>
             ) : (
               text.content
             )}

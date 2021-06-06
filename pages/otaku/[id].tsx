@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-import Title from '@/components/notion/Title';
-import renderBlock from '@/components/notion/Block';
+import Page from '@/components/otaku/Page';
+
 import { getDatabase, getPage, getBlocks } from '@/lib/notion';
 
 export default function Post({
@@ -13,24 +13,7 @@ export default function Post({
     return <div />;
   }
 
-  return (
-    <article>
-      <Title
-        id={page.id}
-        text={
-          page.properties.Name.type === 'title'
-            ? page.properties.Name.title
-            : null
-        }
-      />
-
-      <section>
-        {blocks.map((block: any) => (
-          <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-        ))}
-      </section>
-    </article>
-  );
+  return <Page page={page} blocks={blocks} />;
 }
 
 export const getStaticPaths = async () => {
@@ -59,7 +42,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   );
 
   const blocksWithChildren = blocks.map((block: any) => {
-    // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
       block[block.type]['children'] = childBlocks.find(
         (x) => x.id === block.id

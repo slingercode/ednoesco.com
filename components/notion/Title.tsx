@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Title = ({ id, text }: Props) => (
-  <h1 className="text-4xl">
+  <h1 className="text-4xl border-b-2 mb-5 pb-2">
     <Text id={id} text={text} />
   </h1>
 );
