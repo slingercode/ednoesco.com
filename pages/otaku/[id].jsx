@@ -26,12 +26,10 @@ export const getStaticProps = async (context) => {
   const childBlocks = await Promise.all(
     blocks
       .filter((block) => block.has_children)
-      .map(async (block) => {
-        return {
-          id: block.id,
-          children: await getBlocks(block.id),
-        };
-      })
+      .map(async (block) => ({
+        id: block.id,
+        children: await getBlocks(block.id),
+      }))
   );
 
   const blocksWithChildren = blocks.map((block) => {
@@ -48,6 +46,6 @@ export const getStaticProps = async (context) => {
       page,
       blocks: blocksWithChildren,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 };
