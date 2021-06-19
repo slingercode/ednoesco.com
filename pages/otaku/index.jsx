@@ -34,7 +34,18 @@ const Index = ({ posts }) => (
 );
 
 export const getStaticProps = async () => {
-  const database = await getDatabase(process.env.NOTION_TABLE_ID);
+  const sorts = [
+    {
+      property: 'Name',
+      direction: 'ascending',
+    },
+    {
+      property: 'Volumen',
+      direction: 'ascending',
+    },
+  ];
+
+  const database = await getDatabase(process.env.NOTION_TABLE_ID, sorts);
 
   return {
     props: {
