@@ -1,14 +1,9 @@
-import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Container = ({ children }: Props) => {
+const Container = ({ children }) => {
   const [mounted, setMounted] = useState(false);
 
   // When mounted on client, now we can show the UI

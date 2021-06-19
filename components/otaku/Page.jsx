@@ -1,15 +1,10 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
 
-import Title from '@/components/notion/Title';
-import renderBlock from '@/components/notion/Block';
+import Title from '../notion/Title';
+import renderBlock from '../notion/Block';
 
-interface Props {
-  page: any;
-  blocks: any[];
-}
-
-const Page = ({ page, blocks }: Props) => {
+const Page = ({ page, blocks }) => {
   return (
     <div>
       <Title
@@ -22,7 +17,7 @@ const Page = ({ page, blocks }: Props) => {
       />
 
       <div>
-        {blocks.map((block: any) => (
+        {blocks.map((block) => (
           <Fragment key={block.id}>{renderBlock(block)}</Fragment>
         ))}
       </div>

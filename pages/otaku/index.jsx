@@ -1,11 +1,8 @@
-import { InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
+import Container from '../../components/Container';
+import Article from '../../components/otaku/Article';
+import { getDatabase } from '../../lib/notion';
 
-import Container from '@/components/Container';
-import Article from '@/components/otaku/Article';
-import { getDatabase } from '@/lib/notion';
-
-const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const Index = ({ posts }) => (
   <Container>
     {posts.map((post) => (
       <Article
@@ -37,7 +34,7 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => (
 );
 
 export const getStaticProps = async () => {
-  const database = await getDatabase(process.env.NOTION_TABLE_ID!);
+  const database = await getDatabase(process.env.NOTION_TABLE_ID);
 
   return {
     props: {

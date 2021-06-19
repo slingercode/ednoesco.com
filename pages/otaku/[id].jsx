@@ -1,14 +1,7 @@
-import { Fragment } from 'react';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Page from '../../components/otaku/Page';
+import { getDatabase, getPage, getBlocks } from '../../lib/notion';
 
-import Page from '@/components/otaku/Page';
-
-import { getDatabase, getPage, getBlocks } from '@/lib/notion';
-
-export default function Post({
-  page,
-  blocks,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
@@ -17,7 +10,7 @@ export default function Post({
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(process.env.NOTION_TABLE_ID!);
+  const database = await getDatabase(process.env.NOTION_TABLE_ID);
 
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
@@ -25,8 +18,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { id } = context.params as any;
+export const getStaticProps = async (context) => {
+  const { id } = context.params;
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 
@@ -41,7 +34,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       })
   );
 
-  const blocksWithChildren = blocks.map((block: any) => {
+  const blocksWithChildren = blocks.map((block) => {
     if (block.has_children && !block[block.type].children) {
       block[block.type]['children'] = childBlocks.find(
         (x) => x.id === block.id

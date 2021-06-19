@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Container from '@/components/Container';
+import Container from '../components/Container';
 
 const PageNotFound = () => (
   <Container title="404 - Not Found">

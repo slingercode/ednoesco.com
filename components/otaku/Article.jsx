@@ -1,19 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-import Title from '@/components/notion/ArticleTitle';
-import Subtitle from '@/components/notion/ArticleSubtitle';
-import Text from '@/components/notion/Text';
+import Title from '../notion/ArticleTitle';
+import Subtitle from '../notion/ArticleSubtitle';
+import Text from '../notion/Text';
 
-interface Props {
-  id: string;
-  text: any[] | null;
-  volumen: string;
-  author: any[] | null;
-  owned: boolean;
-}
-
-const Page = ({ id, text, volumen, author, owned }: Props) => {
+const Page = ({ id, text, volumen, author, owned }) => {
   return (
     <div className="flex mb-5">
       <div className="w-11/12">

@@ -1,11 +1,6 @@
 import clsx from 'clsx';
 
-interface Props {
-  id: string;
-  text: any[] | null;
-}
-
-const Text = ({ id, text }: Props) => {
+const Text = ({ id, text }) => {
   if (!text) {
     return null;
   }

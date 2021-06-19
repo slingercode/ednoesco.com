@@ -1,6 +1,6 @@
 import Text from './Text';
 
-const renderBlock = (block: any) => {
+const renderBlock = (block) => {
   const { type, id } = block;
   const value = block[type];
 
