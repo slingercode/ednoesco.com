@@ -8,26 +8,11 @@ const Index = ({ posts }) => (
       <Article
         key={post.id}
         id={post.id}
-        text={
-          post.properties.Name.type === 'title'
-            ? post.properties.Name.title
-            : null
-        }
-        volumen={
-          post.properties.Volumen.type === 'number'
-            ? post.properties.Volumen.number.toString()
-            : ''
-        }
-        author={
-          post.properties.Author.type === 'rich_text'
-            ? post.properties.Author.rich_text
-            : null
-        }
-        owned={
-          post.properties.Owned.type === 'checkbox'
-            ? post.properties.Owned.checkbox
-            : false
-        }
+        text={post.properties.Name.title}
+        volumen={post.properties.Volumen.number.toString()}
+        author={post.properties.Author.rich_text}
+        genres={post.properties.Genres.multi_select}
+        owned={post.properties.Owned.checkbox}
       />
     ))}
   </Container>
