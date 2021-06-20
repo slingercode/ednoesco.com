@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 
-import Container from '@/components/Container';
+import Container from '../components/Container';
 
 const Index = () => {
   const { theme } = useTheme();
