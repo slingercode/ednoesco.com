@@ -46,13 +46,7 @@ const renderBlock = (block) => {
       );
 
     default:
-      return (
-        <div>
-          {`❌ Unsupported block (${
-            type === 'unsupported' ? 'unsupported by Notion API' : type
-          })`}
-        </div>
-      );
+      return;
   }
 };
 
