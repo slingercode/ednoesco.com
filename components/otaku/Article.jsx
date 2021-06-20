@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Title from '../notion/ArticleTitle';
 import Subtitle from '../notion/ArticleSubtitle';
 import Text from '../notion/Text';
-import Chip from '../notion/Chip';
+import Chip from './Chip';
 
 const Page = ({ id, text, volumen, author, genres, owned }) => {
   return (

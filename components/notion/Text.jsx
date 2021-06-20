@@ -9,21 +9,23 @@ const Text = ({ id, text }) => {
     <>
       {text.map((value, index) => {
         const {
-          annotations: { bold, code, color, italic, strikethrough, underline },
           text,
+          annotations: { bold, code, color, italic, strikethrough, underline },
         } = value;
+
+        console.log(color);
 
         return (
           <span
             key={`${id} - ${index}`}
             style={color !== 'default' ? { color } : {}}
-            className={clsx([
-              bold ? 'font-bold' : '',
-              code ? 'font-mono bg-gray-300 px-2 py-1 rounded-md' : '',
-              italic ? 'italic' : '',
-              strikethrough ? 'line-through' : '',
-              underline ? 'underline' : '',
-            ])}
+            className={clsx({
+              ['font-bold']: bold,
+              ['font-mono bg-gray-300 px-2 py-1 rounded-md']: code,
+              ['italic']: italic,
+              ['line-through']: strikethrough,
+              ['underline']: underline,
+            })}
           >
             {text.link ? (
               <a
