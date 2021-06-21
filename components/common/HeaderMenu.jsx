@@ -8,7 +8,7 @@ const HeaderMenu = () => {
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger className="bg-gray-400 p-2 rounded-md">
+      <DropdownMenu.Trigger className="bg-slingercode-boxBackground border border-slingercode-fontColor p-2 rounded-md">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -26,10 +26,10 @@ const HeaderMenu = () => {
       <DropdownMenu.Content
         sideOffset={5}
         style={{ minWidth: 130 }}
-        className="bg-gray-50 p-1 rounded-md"
+        className="bg-slingercode-boxBackground p-1 rounded-md"
       >
         <DropdownMenu.Root>
-          <DropdownMenu.TriggerItem className="p-1 rounded-md text-gray-800 cursor-pointer">
+          <DropdownMenu.TriggerItem className="p-1 rounded-md cursor-pointer">
             <div className="flex items-center justify-between">
               More
               <svg
@@ -50,17 +50,17 @@ const HeaderMenu = () => {
           <DropdownMenu.Content
             sideOffset={10}
             style={{ maxWidth: 150 }}
-            className="bg-gray-50 p-1 rounded-md"
+            className="bg-slingercode-boxBackground p-1 rounded-md"
           >
-            <DropdownMenu.Item className="text-gray-400 text-xs p-2 flex items-center">
+            <div className="text-xs p-2 flex items-center">
               This are my hobbies and my collections of some stuff. Just for fun
               🙃
-            </DropdownMenu.Item>
+            </div>
 
-            <DropdownMenu.Separator className="bg-gray-200 h-px" />
+            <DropdownMenu.Separator className="bg-slingercode-fontColor h-px mb-1" />
 
             <DropdownMenu.Item
-              className="p-1 rounded-md text-gray-800 hover:bg-blue-400"
+              className="p-1 rounded-md hover:bg-slingercode-accent hover:text-slingercode-boxBackground"
               onSelect={() => router.push('otaku')}
             >
               <Link href="otaku">

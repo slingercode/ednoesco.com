@@ -13,8 +13,6 @@ const Text = ({ id, text }) => {
           annotations: { bold, code, color, italic, strikethrough, underline },
         } = value;
 
-        console.log(color);
-
         return (
           <span
             key={`${id} - ${index}`}

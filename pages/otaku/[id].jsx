@@ -1,13 +1,13 @@
 import Page from '../../components/otaku/Page';
 import { getDatabase, getPage, getBlocks } from '../../lib/notion';
 
-export default function Post({ page, blocks }) {
+const Post = ({ page, blocks }) => {
   if (!page || !blocks) {
     return <div />;
   }
 
   return <Page page={page} blocks={blocks} />;
-}
+};
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(process.env.NOTION_TABLE_ID);
@@ -49,3 +49,5 @@ export const getStaticProps = async (context) => {
     revalidate: 10,
   };
 };
+
+export default Post;
