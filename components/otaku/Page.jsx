@@ -14,6 +14,7 @@ const Page = ({ title, volumen, amazon, blocks }) => (
         <a
           href={amazon}
           target="_blank"
+          rel="noreferrer"
           className="text-blue-font-low text-lg focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
         >
           Amazon

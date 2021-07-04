@@ -12,19 +12,19 @@ const Header = () => (
       </Link>
 
       <a
-        className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
         href="https://github.com/slingercode"
         rel="noreferrer"
         target="_blank"
+        className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
       >
         Github
       </a>
 
       <a
-        className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
         href="https://twitter.com/_slingercode"
         rel="noreferrer"
         target="_blank"
+        className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
       >
         Twitter
       </a>
