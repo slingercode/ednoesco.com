@@ -10,13 +10,12 @@ const Text = ({ id, text }) => {
       {text.map((value, index) => {
         const {
           text,
-          annotations: { bold, code, color, italic, strikethrough, underline },
+          annotations: { bold, code, italic, strikethrough, underline },
         } = value;
 
         return (
           <span
             key={`${id} - ${index}`}
-            style={color !== 'default' ? { color } : {}}
             className={clsx({
               ['font-bold']: bold,
               ['font-mono bg-gray-300 px-2 py-1 rounded-md']: code,
@@ -27,7 +26,7 @@ const Text = ({ id, text }) => {
           >
             {text.link ? (
               <a
-                className="text-blue-500"
+                className="text-blue-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
                 href={text.link.url}
                 rel="noreferrer"
                 target="_blank"

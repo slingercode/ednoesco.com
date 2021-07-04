@@ -6,7 +6,9 @@ const Post = ({ page, blocks }) => {
     return <div />;
   }
 
-  return <Page page={page} blocks={blocks} />;
+  return (
+    <Page title={page.properties.Name.title[0].text.content} blocks={blocks} />
+  );
 };
 
 export const getStaticPaths = async () => {

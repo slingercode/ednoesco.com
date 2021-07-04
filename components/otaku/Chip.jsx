@@ -10,12 +10,12 @@ const Chip = ({ name, color }) => (
       as="span"
       className={clsx('rounded-sm px-2 text-xs', {
         ['cursor-pointer']: name === 'Yuri',
-        ['bg-pink-300 text-gray-800']: color === 'pink',
-        ['bg-green-400 text-gray-800']: color === 'green',
-        ['bg-yellow-500 text-gray-800']: color === 'yellow',
-        ['bg-purple-400 text-gray-800']: color === 'purple',
-        ['bg-yellow-700 text-gray-50']: color === 'orange',
-        ['bg-red-600 text-gray-50']: color === 'red',
+        ['bg-pink-solid text-black']: color === 'pink',
+        ['bg-green-solid text-black']: color === 'green',
+        ['bg-yellow-solid text-black']: color === 'yellow',
+        ['bg-purple-solid text-white']: color === 'purple',
+        ['bg-orange-solid text-black']: color === 'orange',
+        ['bg-red-solid text-black']: color === 'red',
       })}
     >
       {name}

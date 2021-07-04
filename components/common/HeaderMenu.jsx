@@ -2,57 +2,36 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { HamburgerMenuIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
 const HeaderMenu = () => {
   const router = useRouter();
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger className="bg-slingercode-boxBackground border border-slingercode-fontColor p-2 rounded-md">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
+      <DropdownMenu.Trigger className="bg-gray-background-component hover:bg-gray-background-hover active:bg-gray-background-active border border-gray-border-interactive hover:border-gray-border-hover p-2 rounded-md focus:outline-none focus:ring focus:border-gray-border-interactive focus:ring-gray-border-interactive">
+        <HamburgerMenuIcon />
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content
-        sideOffset={5}
+        sideOffset={2}
         style={{ minWidth: 130 }}
-        className="bg-slingercode-boxBackground p-1 rounded-md"
+        className="bg-gray-background-component hover:bg-gray-background-hover rounded-md"
       >
         <DropdownMenu.Root>
-          <DropdownMenu.TriggerItem className="p-1 rounded-md cursor-pointer">
+          <DropdownMenu.TriggerItem className="p-1 m-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md">
             <div className="flex items-center justify-between">
               More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <ChevronRightIcon />
             </div>
           </DropdownMenu.TriggerItem>
 
           <DropdownMenu.Content
             sideOffset={10}
             style={{ maxWidth: 150 }}
-            className="bg-slingercode-boxBackground p-1 rounded-md"
+            className="bg-gray-background-component p-1 rounded-md"
           >
-            <div className="text-xs p-2 flex items-center">
+            <div className="text-gray-font-low text-xs p-2 flex items-center">
               This are my hobbies and my collections of some stuff. Just for fun
               🙃
             </div>
@@ -60,7 +39,7 @@ const HeaderMenu = () => {
             <DropdownMenu.Separator className="bg-slingercode-fontColor h-px mb-1" />
 
             <DropdownMenu.Item
-              className="p-1 rounded-md hover:bg-slingercode-accent hover:text-slingercode-boxBackground"
+              className="hover:bg-gray-background-hover active:bg-gray-background-active p-1 rounded-md focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
               onSelect={() => router.push('otaku')}
             >
               <Link href="otaku">

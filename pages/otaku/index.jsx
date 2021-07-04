@@ -8,9 +8,9 @@ const Index = ({ posts }) => (
       <Article
         key={post.id}
         id={post.id}
-        text={post.properties.Name.title}
+        title={post.properties.Name.title[0].text.content}
         volumen={post.properties.Volumen.number.toString()}
-        author={post.properties.Author.rich_text}
+        author={post.properties.Author.rich_text[0].text.content}
         genres={post.properties.Genres.multi_select}
         owned={post.properties.Owned.checkbox}
       />

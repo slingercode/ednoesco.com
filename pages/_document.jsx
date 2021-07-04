@@ -7,7 +7,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
 
-        <body className="bg-slingercode-background text-slingercode-fontColor">
+        <body className="bg-gray-background-main text-gray-font-high">
           <Main />
           <NextScript />
         </body>

@@ -1,29 +1,25 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
+import * as Separator from '@radix-ui/react-separator';
 
-import Title from '../notion/Title';
+import Title from '../notion/ArticleTitle';
 import renderBlock from '../notion/Block';
 
-const Page = ({ page, blocks }) => (
+const Page = ({ title, blocks }) => (
   <div>
-    <Title
-      id={page.id}
-      text={
-        page.properties.Name.type === 'title'
-          ? page.properties.Name.title
-          : null
-      }
-    />
+    <Title size="large">{title}</Title>
 
-    <div>
-      {blocks.map((block) => (
-        <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-      ))}
-    </div>
+    <Separator.Root className="bg-gray-border-non-interactive h-px mb-5 mt-1" />
+
+    {blocks.map((block) => (
+      <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+    ))}
 
     <div className="mt-5">
       <Link href="/otaku">
-        <a className="text-blue-500">Go back</a>
+        <a className="text-blue-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md">
+          Go back
+        </a>
       </Link>
     </div>
   </div>
