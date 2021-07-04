@@ -1,5 +1,5 @@
-const ArticleTitle = ({ children }) => (
-  <h3 className="text-lg font-medium">{children}</h3>
+const ArticleSubtitle = ({ children }) => (
+  <h2 className="text-lg font-medium">{children}</h2>
 );
 
-export default ArticleTitle;
+export default ArticleSubtitle;
