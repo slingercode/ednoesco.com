@@ -17,7 +17,7 @@ const Genre = ({ name, color }) => (
         ['bg-orange-solid text-black']: color === 'orange',
         ['bg-red-solid text-black']: color === 'red',
         ['bg-blue-solid text-black']: color === 'blue',
-        ['bg-gray-solid text-white']: color === 'default',
+        ['bg-gray-background-code text-white']: color === 'default',
       })}
     >
       {name}
