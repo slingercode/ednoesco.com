@@ -5,9 +5,21 @@ import * as Separator from '@radix-ui/react-separator';
 import Title from '../notion/ArticleTitle';
 import renderBlock from '../notion/Block';
 
-const Page = ({ title, blocks }) => (
+const Page = ({ title, volumen, amazon, blocks }) => (
   <div>
-    <Title size="large">{title}</Title>
+    <Title size="large">{`${title} Vol. ${volumen}`}</Title>
+
+    {amazon && (
+      <div className="my-3">
+        <a
+          href={amazon}
+          target="_blank"
+          className="text-blue-font-low text-lg focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
+        >
+          Amazon
+        </a>
+      </div>
+    )}
 
     <Separator.Root className="bg-gray-border-non-interactive h-px mb-5 mt-1" />
 

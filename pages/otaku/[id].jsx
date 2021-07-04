@@ -1,13 +1,25 @@
+import Container from '../../components/Container';
 import Page from '../../components/otaku/Page';
 import { getDatabase, getPage, getBlocks } from '../../lib/notion';
 
 const Post = ({ page, blocks }) => {
   if (!page || !blocks) {
-    return <div />;
+    return <Container />;
   }
 
   return (
-    <Page title={page.properties.Name.title[0].text.content} blocks={blocks} />
+    <Container
+      title={`${
+        page.properties.Name.title[0].text.content
+      } Vol. ${page.properties.Volumen.number.toString()}`}
+    >
+      <Page
+        title={page.properties.Name.title[0].text.content}
+        volumen={page.properties.Volumen.number.toString()}
+        amazon={page.properties.Amazon?.url || undefined}
+        blocks={blocks}
+      />
+    </Container>
   );
 };
 
@@ -40,6 +52,7 @@ export const getStaticProps = async (context) => {
         (x) => x.id === block.id
       )?.children;
     }
+
     return block;
   });
 

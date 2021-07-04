@@ -9,6 +9,8 @@ const {
   orangeDark,
   redDark,
   blueDark,
+  cyanDark,
+  crimsonDark,
 } = require('@radix-ui/colors');
 
 module.exports = {
@@ -29,6 +31,9 @@ module.exports = {
         },
         yellow: {
           solid: yellowDark.yellow9,
+          font: {
+            low: yellowDark.yellow11,
+          },
         },
         purple: {
           solid: purpleDark.purple9,
@@ -40,13 +45,26 @@ module.exports = {
           solid: redDark.red9,
         },
         blue: {
+          solid: blueDark.blue9,
           font: {
             low: blueDark.blue11,
           },
         },
+        cyan: {
+          font: {
+            low: cyanDark.cyan11,
+          },
+        },
+        crimson: {
+          font: {
+            low: crimsonDark.crimson11,
+          },
+        },
         gray: {
+          solid: mauveDark.mauve9,
           background: {
             main: mauveDark.mauve1,
+            code: mauveDark.mauve2,
             component: mauveDark.mauve3,
             hover: mauveDark.mauve4,
             active: mauveDark.mauve5,

@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { CheckIcon } from '@radix-ui/react-icons';
 
 import Title from '../notion/ArticleTitle';
 import Subtitle from '../notion/ArticleSubtitle';
-import Chip from './Chip';
+import Genre from './Genre';
+import Status from './Status';
 
-const Page = ({ id, title, volumen, author, genres, owned }) => (
+const Page = ({ id, title, volumen, author, genres, status }) => (
   <div className="flex mb-5">
     <div className="w-11/12">
       <div className="mb-1">
@@ -20,7 +20,7 @@ const Page = ({ id, title, volumen, author, genres, owned }) => (
       <div className="mb-2 flex">
         {genres.map((genre) => (
           <div key={genre.id} className="mr-2">
-            <Chip name={genre.name} color={genre.color} />
+            <Genre name={genre.name} color={genre.color} />
           </div>
         ))}
       </div>
@@ -34,8 +34,8 @@ const Page = ({ id, title, volumen, author, genres, owned }) => (
       </div>
     </div>
 
-    <div className="w-1/12 flex justify-center items-center text-green-font-low">
-      {owned && <CheckIcon height={20} width={20} />}
+    <div className="w-1/12 flex justify-center items-center">
+      <Status status={status.name} />
     </div>
   </div>
 );
