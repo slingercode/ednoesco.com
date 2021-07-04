@@ -1,5 +1,5 @@
 const ArticleSubtitle = ({ children }) => (
-  <h3 className="text-lg font-medium">{children}</h3>
+  <h2 className="text-lg font-medium">{children}</h2>
 );
 
 export default ArticleSubtitle;
