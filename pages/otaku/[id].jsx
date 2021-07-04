@@ -1,13 +1,27 @@
+import Container from '../../components/Container';
 import Page from '../../components/otaku/Page';
 import { getDatabase, getPage, getBlocks } from '../../lib/notion';
 
-export default function Post({ page, blocks }) {
+const Post = ({ page, blocks }) => {
   if (!page || !blocks) {
-    return <div />;
+    return <Container />;
   }
 
-  return <Page page={page} blocks={blocks} />;
-}
+  return (
+    <Container
+      title={`${
+        page.properties.Name.title[0].text.content
+      } Vol. ${page.properties.Volumen.number.toString()}`}
+    >
+      <Page
+        title={page.properties.Name.title[0].text.content}
+        volumen={page.properties.Volumen.number.toString()}
+        amazon={page.properties.Amazon?.url || undefined}
+        blocks={blocks}
+      />
+    </Container>
+  );
+};
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(process.env.NOTION_TABLE_ID);
@@ -38,6 +52,7 @@ export const getStaticProps = async (context) => {
         (x) => x.id === block.id
       )?.children;
     }
+
     return block;
   });
 
@@ -49,3 +64,5 @@ export const getStaticProps = async (context) => {
     revalidate: 10,
   };
 };
+
+export default Post;

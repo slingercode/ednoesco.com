@@ -8,7 +8,9 @@ const PageNotFound = () => (
       <div>404 - Page Not Found :(</div>
 
       <Link href="/">
-        <a className="mt-5 text-blue-500">Go back.</a>
+        <a className="mt-5 text-blue-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md">
+          Go back.
+        </a>
       </Link>
     </div>
   </Container>
