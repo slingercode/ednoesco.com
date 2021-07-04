@@ -10,6 +10,7 @@ const Genre = ({ name, color }) => (
       as="span"
       className={clsx('rounded-sm px-2 text-xs', {
         ['cursor-pointer']: name === 'Yuri',
+        ['cursor-default']: name !== 'Yuri',
         ['bg-pink-solid text-black']: color === 'pink',
         ['bg-green-solid text-black']: color === 'green',
         ['bg-yellow-solid text-black']: color === 'yellow',
