@@ -3,16 +3,16 @@ import Article from '../../components/otaku/Article';
 import { getDatabase } from '../../lib/notion';
 
 const Index = ({ posts }) => (
-  <Container>
+  <Container title="Slingercode - Otaku">
     {posts.map((post) => (
       <Article
         key={post.id}
         id={post.id}
-        text={post.properties.Name.title}
+        title={post.properties.Name.title[0].text.content}
         volumen={post.properties.Volumen.number.toString()}
-        author={post.properties.Author.rich_text}
+        author={post.properties.Author.rich_text[0].text.content}
         genres={post.properties.Genres.multi_select}
-        owned={post.properties.Owned.checkbox}
+        status={post.properties.Status.select}
       />
     ))}
   </Container>

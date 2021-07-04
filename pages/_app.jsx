@@ -1,15 +1,15 @@
-import { ThemeProvider } from 'next-themes';
+import { IdProvider } from '@radix-ui/react-id';
 
 import AppContainer from '../components/AppContainer';
 
 import 'tailwindcss/tailwind.css';
 
 const Slingercode = ({ Component, pageProps }) => (
-  <ThemeProvider attribute="class" defaultTheme="dark">
+  <IdProvider>
     <AppContainer>
       <Component {...pageProps} />
     </AppContainer>
-  </ThemeProvider>
+  </IdProvider>
 );
 
 export default Slingercode;
