@@ -2,15 +2,15 @@ import React from 'react';
 import clsx from 'clsx';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
-const messages = ['😏'];
+const messages = ['😏', '🤭', '🥵'];
 
 const Genre = ({ name, color }) => (
   <Tooltip.Root>
     <Tooltip.Trigger
       as="span"
-      className={clsx('rounded-sm px-2 text-xs', {
-        ['cursor-pointer']: name === 'Yuri',
-        ['cursor-default']: name !== 'Yuri',
+      className={clsx('rounded-sm px-2 text-xs appearance-none', {
+        ['cursor-pointer']: name === 'Yuri' || name === 'Ecchi',
+        ['cursor-default']: name !== 'Yuri' || name !== 'Ecchi',
         ['bg-pink-solid text-black']: color === 'pink',
         ['bg-green-solid text-black']: color === 'green',
         ['bg-yellow-solid text-black']: color === 'yellow',
@@ -18,13 +18,14 @@ const Genre = ({ name, color }) => (
         ['bg-orange-solid text-black']: color === 'orange',
         ['bg-red-solid text-black']: color === 'red',
         ['bg-blue-solid text-black']: color === 'blue',
-        ['bg-gray-background-code text-white']: color === 'default',
+        ['bg-gray-background-code text-white border-2 border-gray-border-non-interactive']:
+          color === 'default',
       })}
     >
       {name}
     </Tooltip.Trigger>
 
-    {name === 'Yuri' && (
+    {(name === 'Yuri' || name === 'Ecchi') && (
       <Tooltip.Content
         sideOffset={10}
         className="bg-gray-solid px-2 rounded-sm"
