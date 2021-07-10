@@ -8,7 +8,7 @@ import Status from './Status';
 
 const Page = ({ id, title, volumen, author, genres, status }) => (
   <div className="flex mb-5">
-    <div className="w-11/12">
+    <div className="flex-1">
       <div className="mb-1">
         <Title>{`${title} Vol. ${volumen}`}</Title>
       </div>
@@ -17,7 +17,7 @@ const Page = ({ id, title, volumen, author, genres, status }) => (
         <Subtitle>{`By ${author}`}</Subtitle>
       </div>
 
-      <div className="mb-2 flex">
+      <div className="mb-2">
         {genres.map((genre) => (
           <div key={genre.id} className="mr-2">
             <Genre name={genre.name} color={genre.color} />
@@ -34,7 +34,7 @@ const Page = ({ id, title, volumen, author, genres, status }) => (
       </div>
     </div>
 
-    <div className="w-1/12 flex justify-center items-center">
+    <div className="flex justify-center items-center">
       <Status status={status.name} />
     </div>
   </div>

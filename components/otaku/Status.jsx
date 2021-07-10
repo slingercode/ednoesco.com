@@ -43,8 +43,8 @@ const getIcon = (status) => {
 };
 
 const Status = ({ status }) => (
-  <Tooltip.Root>
-    <Tooltip.Trigger as="span" className="cursor-pointer">
+  <Tooltip.Root delayDuration={0}>
+    <Tooltip.Trigger as="span" className="cursor-pointer appearance-none">
       {getIcon(status)}
     </Tooltip.Trigger>
 
