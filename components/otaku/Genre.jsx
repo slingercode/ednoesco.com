@@ -8,7 +8,7 @@ const Genre = ({ name, color }) => (
   <Tooltip.Root>
     <Tooltip.Trigger
       as="span"
-      className={clsx('rounded-sm px-2 text-xs', {
+      className={clsx('rounded-sm px-2 text-xs appearance-none', {
         ['cursor-pointer']: name === 'Yuri',
         ['cursor-default']: name !== 'Yuri',
         ['bg-pink-solid text-black']: color === 'pink',
@@ -18,7 +18,8 @@ const Genre = ({ name, color }) => (
         ['bg-orange-solid text-black']: color === 'orange',
         ['bg-red-solid text-black']: color === 'red',
         ['bg-blue-solid text-black']: color === 'blue',
-        ['bg-gray-background-code text-white']: color === 'default',
+        ['bg-gray-background-code text-white border-2 border-gray-border-non-interactive']:
+          color === 'default',
       })}
     >
       {name}

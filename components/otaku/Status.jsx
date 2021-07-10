@@ -44,7 +44,7 @@ const getIcon = (status) => {
 
 const Status = ({ status }) => (
   <Tooltip.Root>
-    <Tooltip.Trigger as="span" className="cursor-pointer">
+    <Tooltip.Trigger as="span" className="cursor-pointer appearance-none">
       {getIcon(status)}
     </Tooltip.Trigger>
 
