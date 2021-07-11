@@ -10,7 +10,11 @@ const Page = ({ id, title, volumen, author, genres, status }) => (
   <div className="flex mb-5">
     <div className="flex-1">
       <div className="mb-1">
-        <Title>{`${title} Vol. ${volumen}`}</Title>
+        {volumen ? (
+          <Title>{`${title} Vol. ${volumen}`}</Title>
+        ) : (
+          <Title>{title}</Title>
+        )}
       </div>
 
       <div className="mb-2">
