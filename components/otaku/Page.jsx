@@ -7,7 +7,11 @@ import renderBlock from '../notion/Block';
 
 const Page = ({ title, volumen, amazon, blocks }) => (
   <div>
-    <Title size="large">{`${title} Vol. ${volumen}`}</Title>
+    {volumen ? (
+      <Title>{`${title} Vol. ${volumen}`}</Title>
+    ) : (
+      <Title>{title}</Title>
+    )}
 
     {amazon && (
       <div className="my-3">

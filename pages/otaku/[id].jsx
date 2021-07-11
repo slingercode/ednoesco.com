@@ -8,14 +8,10 @@ const Post = ({ page, blocks }) => {
   }
 
   return (
-    <Container
-      title={`${
-        page.properties.Name.title[0].text.content
-      } Vol. ${page.properties.Volumen.number.toString()}`}
-    >
+    <Container>
       <Page
         title={page.properties.Name.title[0].text.content}
-        volumen={page.properties.Volumen.number.toString()}
+        volumen={page.properties.Volumen?.number?.toString()}
         amazon={page.properties.Amazon?.url || undefined}
         blocks={blocks}
       />
