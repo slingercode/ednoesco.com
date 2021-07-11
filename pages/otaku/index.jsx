@@ -26,7 +26,7 @@ const Index = ({ posts }) => {
           key={post.id}
           id={post.id}
           title={post.properties.Name.title[0].text.content}
-          volumen={post.properties.Volumen.number.toString()}
+          volumen={post.properties.Volumen?.number?.toString()}
           author={post.properties.Author.rich_text[0].text.content}
           genres={post.properties.Genres.multi_select}
           status={post.properties.Status.select}
