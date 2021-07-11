@@ -37,6 +37,9 @@ module.exports = {
         },
         purple: {
           solid: purpleDark.purple9,
+          font: {
+            low: purpleDark.purple11,
+          },
         },
         orange: {
           solid: orangeDark.orange9,
