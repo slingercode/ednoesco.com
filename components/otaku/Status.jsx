@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   CheckIcon,
+  RocketIcon,
   CountdownTimerIcon,
   ExclamationTriangleIcon,
   Cross2Icon,
@@ -13,6 +14,13 @@ const getIcon = (status) => {
       return (
         <span className="text-green-font-low">
           <CheckIcon height={24} width={24} />
+        </span>
+      );
+
+    case 'Shipped':
+      return (
+        <span className="text-purple-font-low">
+          <RocketIcon height={20} width={20} />
         </span>
       );
 
