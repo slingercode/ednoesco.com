@@ -57,7 +57,7 @@ export const getStaticProps = async () => {
     },
   ];
 
-  const database = await getDatabase(process.env.NOTION_TABLE_ID, sorts);
+  const database = await getDatabase(process.env.NOTION_TABLE_OTAKU_ID, sorts);
 
   return {
     props: {
