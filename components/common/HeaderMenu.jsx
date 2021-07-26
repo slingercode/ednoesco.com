@@ -17,12 +17,21 @@ const HeaderMenu = () => {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content
-        sideOffset={2}
+        sideOffset={5}
         style={{ minWidth: 130 }}
-        className="bg-gray-background-component hover:bg-gray-background-hover rounded-md"
+        className="bg-gray-background-component p-1 rounded-md"
       >
         <DropdownMenu.Root>
-          <DropdownMenu.TriggerItem className="p-1 m-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md">
+          <DropdownMenu.Item
+            className="p-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md hover:bg-gray-background-hover"
+            onSelect={() => router.push('timeline')}
+          >
+            <Link href="otaku">
+              <a className="flex">Timeline</a>
+            </Link>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.TriggerItem className="p-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md hover:bg-gray-background-hover">
             <div className="flex items-center justify-between">
               More
               <ChevronRightIcon />
