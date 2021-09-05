@@ -10,10 +10,10 @@ const Post = ({ page, blocks }) => {
   return (
     <Container>
       <Page
+        img={page.properties.Img?.url}
         title={page.properties.Name.title[0].text.content}
         volumen={page.properties.Volumen?.number?.toString()}
         amazon={page.properties.Amazon?.url || undefined}
-        img={page.properties.Img?.url}
         blocks={blocks}
       />
     </Container>

@@ -25,6 +25,7 @@ const Index = ({ posts }) => {
         <Article
           key={post.id}
           id={post.id}
+          img={post.properties.Img?.url}
           title={post.properties.Name.title[0].text.content}
           volumen={post.properties.Volumen?.number?.toString()}
           author={post.properties.Author.rich_text[0].text.content}
