@@ -1,17 +1,15 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import * as Separator from '@radix-ui/react-separator';
 
 import Title from '../notion/ArticleTitle';
 import renderBlock from '../notion/Block';
+import { pageTitle } from '../../utils/helpers';
 
-const Page = ({ title, volumen, amazon, blocks }) => (
+const Page = ({ img, title, volumen, amazon, blocks }) => (
   <div>
-    {volumen ? (
-      <Title>{`${title} Vol. ${volumen}`}</Title>
-    ) : (
-      <Title>{title}</Title>
-    )}
+    <Title>{pageTitle(title, volumen)}</Title>
 
     {amazon && (
       <div className="my-3">
@@ -27,6 +25,16 @@ const Page = ({ title, volumen, amazon, blocks }) => (
     )}
 
     <Separator.Root className="bg-gray-border-non-interactive h-px mb-5 mt-1" />
+
+    {img && (
+      <Image
+        src={img}
+        alt={pageTitle()}
+        height={1250}
+        width={900}
+        className="rounded"
+      />
+    )}
 
     {blocks.map((block) => (
       <Fragment key={block.id}>{renderBlock(block)}</Fragment>
