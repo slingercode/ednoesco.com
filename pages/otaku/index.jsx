@@ -1,11 +1,12 @@
 import Container from '../../components/Container';
 import Article from '../../components/otaku/Article';
+import Bonk from '../../components/otaku/Bonk';
 import SearchBar from '../../components/otaku/SearchBar';
 import Pagination from '../../components/otaku/Pagination';
 import usePosts from '../../hooks/otaku/usePosts';
 import { getDatabase } from '../../lib/notion';
 
-const Index = ({ posts }) => {
+const Index = ({ posts, bonk }) => {
   const {
     data,
     searchText,
@@ -19,6 +20,8 @@ const Index = ({ posts }) => {
 
   return (
     <Container title="Slingercode - Otaku">
+      {bonk && <Bonk />}
+
       <SearchBar handleOnValueChange={handleOnValueChange} />
 
       {data.map((post) => (
@@ -46,7 +49,9 @@ const Index = ({ posts }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (context) => {
+  const { bonk = '' } = context.query;
+
   const sorts = [
     {
       property: 'Name',
@@ -58,13 +63,37 @@ export const getStaticProps = async () => {
     },
   ];
 
-  const database = await getDatabase(process.env.NOTION_TABLE_OTAKU_ID, sorts);
+  const filter =
+    bonk !== 'true'
+      ? {
+          and: [
+            {
+              property: 'Genres',
+              multi_select: {
+                does_not_contain: 'Yuri',
+              },
+            },
+            {
+              property: 'Genres',
+              multi_select: {
+                does_not_contain: 'Ecchi',
+              },
+            },
+          ],
+        }
+      : undefined;
+
+  const database = await getDatabase(
+    process.env.NOTION_TABLE_OTAKU_ID,
+    sorts,
+    filter
+  );
 
   return {
     props: {
       posts: database,
+      bonk: bonk === 'true',
     },
-    revalidate: 10,
   };
 };
 

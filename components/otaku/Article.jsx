@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 import Title from '../notion/ArticleTitle';
 import Subtitle from '../notion/ArticleSubtitle';
@@ -10,7 +10,7 @@ import { pageTitle } from '../../utils/helpers';
 
 const Page = ({ id, img, title, volumen, author, genres, status }) => (
   <div className="flex flex-col md:flex-row mb-5">
-    <div className="hidden md:flex w-full md:w-2/12">
+    {/* <div className="hidden md:flex w-full md:w-2/12">
       {img && (
         <Image
           src={img}
@@ -20,10 +20,10 @@ const Page = ({ id, img, title, volumen, author, genres, status }) => (
           className="rounded"
         />
       )}
-    </div>
+    </div> */}
 
-    <div className="flex w-full md:w-10/12">
-      <div className="flex flex-col w-11/12 pl-0 md:pl-4">
+    <div className="flex w-full">
+      <div className="flex flex-col w-11/12">
         <div>
           <Title>{pageTitle(title, volumen)}</Title>
         </div>
