@@ -1,32 +1,35 @@
 import Link from 'next/link';
+import { GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
 
 import HeaderMenu from './common/HeaderMenu';
 
 const Header = () => (
-  <header className="p-5 md:p-10 lg:px-28 lg:py-10 flex flex-row-reverse">
+  <header className="p-5 md:p-10 lg:px-28 lg:py-10 flex flex-row justify-between">
     <div className="flex items-center">
       <Link href="/">
         <a className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md">
-          Home
+          @_slingercode
         </a>
       </Link>
+    </div>
 
+    <div className="flex items-center">
       <a
-        href="https://github.com/slingercode"
+        href="https://slingercode.url.lol/github"
         rel="noreferrer"
         target="_blank"
         className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
       >
-        Github
+        <GitHubLogoIcon height={20} width={20} />
       </a>
 
       <a
-        href="https://twitter.com/_slingercode"
+        href="https://slingercode.url.lol/twitter"
         rel="noreferrer"
         target="_blank"
         className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
       >
-        Twitter
+        <TwitterLogoIcon height={20} width={20} />
       </a>
 
       <HeaderMenu />
