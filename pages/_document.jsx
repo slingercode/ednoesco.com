@@ -9,7 +9,7 @@ class MyDocument extends Document {
           {/* <meta property="og:title" content="This is the title" /> */}
           {/* <meta property="og:type" content="This is the title" /> */}
           {/* <meta property="og:url" content="This is the title" /> */}
-          <meta property="og:image" content="/imgs/demo.jpg" />
+          {/* <meta property="og:image" content="/imgs/demo.jpg" /> */}
         </Head>
 
         <body className="bg-gray-background-main text-gray-font-high">
