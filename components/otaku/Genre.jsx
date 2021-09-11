@@ -7,7 +7,7 @@ const messages = ['😏', '🤭', '🥵'];
 const Genre = ({ name, color }) => (
   <Tooltip.Root>
     <Tooltip.Trigger
-      as="span"
+      as="button"
       className={clsx('rounded-sm px-2 text-xs appearance-none', {
         ['cursor-pointer']: name === 'Yuri' || name === 'Ecchi',
         ['cursor-default']: name !== 'Yuri' || name !== 'Ecchi',
