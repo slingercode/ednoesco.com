@@ -2,6 +2,9 @@ module.exports = {
   future: {
     webpack5: true,
   },
+  images: {
+    domains: ['s3.us-west-2.amazonaws.com'],
+  },
   async headers() {
     return [
       {
