@@ -15,7 +15,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://cdn.discordapp.com/attachments/473563114986536972/839346414768619540/1612541918766.jpg"
+            content="https://omg.lol/meta/img/card.png?v=2021-09-03_b"
           />
 
           {/* Twitter */}
@@ -29,7 +29,7 @@ class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://cdn.discordapp.com/attachments/473563114986536972/839346414768619540/1612541918766.jpg"
+            content="https://omg.lol/meta/img/card.png?v=2021-09-03_b"
           />
         </Head>
 
