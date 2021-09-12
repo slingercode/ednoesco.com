@@ -1,10 +1,13 @@
 import Head from 'next/head';
 
-const Container = ({ title, children }) => (
+import config from '../utils/config.json';
+
+const Container = ({ title, description, children }) => (
   <>
     <Head>
       <title>{title}</title>
-      <meta name="description" content="Welcome! To my personal page" />
+      <meta property="og:title" content={title} />
+      <meta name="og:description" content={description} />
     </Head>
 
     {children}
@@ -12,7 +15,8 @@ const Container = ({ title, children }) => (
 );
 
 Container.defaultProps = {
-  title: 'Slingercode',
+  title: config['og-title'],
+  description: config['og-description'],
 };
 
 export default Container;
