@@ -5,7 +5,7 @@
   "author": {
     "email": "noelespinocordova@tutanota.com",
     "name": "Noel Espino",
-    "url": "https://github.com/slingercode"
+    "url": "https://slingercode.omg.lol"
   },
   "license": "MIT",
   "repository": {
@@ -16,16 +16,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "update-dependencies": "yarn add tailwindcss@latest postcss@latest autoprefixer@latest next@latest react react-dom && yarn add --dev @types/react eslint@latest eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest eslint-plugin-react-hooks@latest"
+    "update-dependencies": "yarn add tailwindcss@latest postcss@latest autoprefixer@latest next@latest react react-dom && yarn add --dev @types/react eslint@latest eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest eslint-plugin-react-hooks@latest",
+    "update-radix": "yarn add @radix-ui/colors @radix-ui/react-dropdown-menu @radix-ui/react-icons @radix-ui/react-id @radix-ui/react-separator @radix-ui/react-tooltip"
   },
   "dependencies": {
     "@notionhq/client": "^0.2.3",
     "@radix-ui/colors": "^0.1.7",
-    "@radix-ui/react-dropdown-menu": "^0.0.21",
+    "@radix-ui/react-dropdown-menu": "^0.1.0",
     "@radix-ui/react-icons": "^1.0.3",
-    "@radix-ui/react-id": "^0.0.6",
-    "@radix-ui/react-separator": "^0.0.14",
-    "@radix-ui/react-tooltip": "^0.0.19",
+    "@radix-ui/react-id": "^0.1.0",
+    "@radix-ui/react-separator": "^0.1.0",
+    "@radix-ui/react-tooltip": "^0.1.0",
     "autoprefixer": "^10.2.6",
     "clsx": "^1.1.1",
     "next": "^10.2.3",
