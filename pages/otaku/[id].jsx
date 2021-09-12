@@ -30,36 +30,45 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const { id } = context.params;
-  const page = await getPage(id);
-  const blocks = await getBlocks(id);
+  try {
+    const { id } = context.params;
+    const page = await getPage(id);
+    const blocks = await getBlocks(id);
 
-  const childBlocks = await Promise.all(
-    blocks
-      .filter((block) => block.has_children)
-      .map(async (block) => ({
-        id: block.id,
-        children: await getBlocks(block.id),
-      }))
-  );
+    const childBlocks = await Promise.all(
+      blocks
+        .filter((block) => block.has_children)
+        .map(async (block) => ({
+          id: block.id,
+          children: await getBlocks(block.id),
+        }))
+    );
 
-  const blocksWithChildren = blocks.map((block) => {
-    if (block.has_children && !block[block.type].children) {
-      block[block.type]['children'] = childBlocks.find(
-        (x) => x.id === block.id
-      )?.children;
-    }
+    const blocksWithChildren = blocks.map((block) => {
+      if (block.has_children && !block[block.type].children) {
+        block[block.type]['children'] = childBlocks.find(
+          (x) => x.id === block.id
+        )?.children;
+      }
 
-    return block;
-  });
+      return block;
+    });
 
-  return {
-    props: {
-      page,
-      blocks: blocksWithChildren,
-    },
-    revalidate: 10,
-  };
+    return {
+      props: {
+        page,
+        blocks: blocksWithChildren,
+      },
+      revalidate: 10,
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
 };
 
 export default Post;
