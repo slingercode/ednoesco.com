@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   CheckIcon,
   RocketIcon,
@@ -50,23 +50,27 @@ const getIcon = (status) => {
   }
 };
 
-const Status = ({ status }) => (
-  <Tooltip.Root>
-    <Tooltip.Trigger
-      as="button"
-      className="cursor-pointer appearance-none focus:outline-none"
-    >
-      {getIcon(status)}
-    </Tooltip.Trigger>
+const Status = ({ status }) => {
+  const [open, setOpen] = useState(false);
 
-    <Tooltip.Content
-      sideOffset={10}
-      className="bg-gray-solid text-black px-2 rounded-sm"
-    >
-      {status}
-      <Tooltip.Arrow className="text-gray-solid fill-current" />
-    </Tooltip.Content>
-  </Tooltip.Root>
-);
+  return (
+    <Tooltip.Root open={open}>
+      <Tooltip.Trigger
+        asChild
+        className="cursor-pointer appearance-none focus:outline-none"
+      >
+        <button onClick={() => setOpen(!open)}>{getIcon(status)}</button>
+      </Tooltip.Trigger>
+
+      <Tooltip.Content
+        sideOffset={10}
+        className="bg-gray-solid text-black px-2 rounded-sm"
+      >
+        {status}
+        <Tooltip.Arrow className="text-gray-solid fill-current" />
+      </Tooltip.Content>
+    </Tooltip.Root>
+  );
+};
 
 export default Status;
