@@ -26,7 +26,7 @@ const HeaderMenu = () => {
             className="p-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md hover:bg-gray-background-hover"
             onSelect={() => router.push('timeline')}
           >
-            <Link href="otaku">
+            <Link href="timeline">
               <a className="flex">Timeline</a>
             </Link>
           </DropdownMenu.Item>
