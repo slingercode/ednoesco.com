@@ -7,6 +7,7 @@ export const getUrlForTwitterMedia = (type) => {
       return 'url';
 
     case 'animated_gif':
+    case 'video':
       return 'preview_image_url';
 
     default:
