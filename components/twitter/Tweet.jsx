@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { reform } from 'gregorian';
 
 import { getUrlForTwitterMedia } from '../../utils/helpers';
+
+const dateFormat = reform('N, d Y G:T P');
 
 const Tweet = ({ tweet }) => (
   <div className="flex flex-col justify-between border rounded p-4">
@@ -33,7 +36,7 @@ const Tweet = ({ tweet }) => (
       </div>
 
       <div className="flex justify-between mt-2 text-xs pb-4">
-        <div>{tweet.created_at}</div>
+        <div>{dateFormat(new Date(tweet.created_at))}</div>
       </div>
     </div>
 
