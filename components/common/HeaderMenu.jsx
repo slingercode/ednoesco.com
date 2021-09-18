@@ -24,6 +24,15 @@ const HeaderMenu = () => {
         <DropdownMenu.Root>
           <DropdownMenu.Item
             className="p-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md hover:bg-gray-background-hover"
+            onSelect={() => router.push('tweets/tech')}
+          >
+            <Link href="tweets/tech">
+              <a className="flex">Tech Tweets</a>
+            </Link>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item
+            className="p-1 rounded-md cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md hover:bg-gray-background-hover"
             onSelect={() => router.push('timeline')}
           >
             <Link href="timeline">
