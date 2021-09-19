@@ -25,7 +25,7 @@ const Tweet = ({ tweet }) => (
       <div className="flex mt-4">{tweet.text}</div>
 
       <div className="flex mt-4">
-        {tweet.media.map((media) => (
+        {(tweet.media || []).map((media) => (
           <Image
             key={media.media_key}
             width={media.width}
@@ -37,6 +37,12 @@ const Tweet = ({ tweet }) => (
 
       <div className="flex justify-between mt-2 text-xs pb-4">
         <div>{dateFormat(new Date(tweet.created_at))}</div>
+      </div>
+
+      <div className="pb-4">
+        {(tweet.referenced_tweets || []).map((refTweet) => (
+          <Tweet key={refTweet.id} tweet={refTweet} />
+        ))}
       </div>
     </div>
 
