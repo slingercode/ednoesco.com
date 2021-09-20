@@ -7,7 +7,7 @@ const Tech = ({ tweets, errors }) => (
   <Container title="Tweets">
     {!!errors.length && <div>Errors</div>}
 
-    <div className="grid gap-5 md:grid-flow-row md:grid-cols-2 md:grid-rows-1">
+    <div className="grid gap-4 md:px-10 lg:px-24">
       {tweets.map((tweet) => (
         <Tweet key={tweet.id} tweet={tweet} />
       ))}
