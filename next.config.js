@@ -3,7 +3,7 @@ module.exports = {
     webpack5: true,
   },
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'pbs.twimg.com'],
   },
   async headers() {
     return [
