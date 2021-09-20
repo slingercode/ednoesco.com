@@ -29,6 +29,7 @@
     "@radix-ui/react-tooltip": "^0.1.0",
     "autoprefixer": "^10.2.6",
     "clsx": "^1.1.1",
+    "gregorian": "^6.0.0",
     "next": "^10.2.3",
     "postcss": "^8.3.0",
     "react": "^17.0.2",
