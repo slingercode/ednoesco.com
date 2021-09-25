@@ -9,7 +9,7 @@ import Status from './Status';
 import { pageTitle } from '../../utils/helpers';
 
 const Page = ({ id, img, title, volumen, author, genres, status }) => (
-  <div className="flex flex-col md:flex-row mb-5">
+  <div className="flex flex-col md:flex-row">
     {/* <div className="hidden md:flex w-full md:w-2/12">
       {img && (
         <Image
