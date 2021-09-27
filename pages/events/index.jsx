@@ -30,10 +30,7 @@ export const getServerSideProps = async () => {
     },
   ];
 
-  const database = await getDatabase(
-    process.env.NOTION_TABLE_TIMELINE_ID,
-    sorts
-  );
+  const database = await getDatabase(process.env.NOTION_EVENTS, sorts);
 
   return {
     props: {

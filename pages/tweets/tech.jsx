@@ -16,7 +16,7 @@ const Tech = ({ tweets, errors }) => (
 );
 
 export const getStaticProps = async () => {
-  const blocks = await getBlocks(process.env.NOTION_TABLE_TWEETS_ID);
+  const blocks = await getBlocks(process.env.NOTION_TWEETS);
 
   const ids = (blocks || [])
     .map(({ toggle }) => toggle?.text[0]?.plain_text || undefined)

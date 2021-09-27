@@ -15,7 +15,7 @@ const Post = ({ page, blocks }) => (
 );
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(process.env.NOTION_TABLE_OTAKU_ID);
+  const database = await getDatabase(process.env.NOTION_OTAKU);
 
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),

@@ -85,11 +85,7 @@ export const getServerSideProps = async (context) => {
         }
       : undefined;
 
-  const database = await getDatabase(
-    process.env.NOTION_TABLE_OTAKU_ID,
-    sorts,
-    filter
-  );
+  const database = await getDatabase(process.env.NOTION_OTAKU, sorts, filter);
 
   return {
     props: {
