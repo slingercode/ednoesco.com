@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Container from '../components/Container';
 
 const PageNotFound = () => (
-  <Container title="404 - Not Found">
+  <Container title="404 - not found">
     <div className="flex flex-col justify-center items-center">
       <div>404 - Page Not Found :(</div>
 

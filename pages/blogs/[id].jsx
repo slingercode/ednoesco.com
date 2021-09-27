@@ -1,5 +1,5 @@
 import Container from '../../components/Container';
-import Page from '../../components/otaku/Page';
+import Page from '../../components/blogs/Page';
 import { getDatabase, getStaticData } from '../../lib/notion';
 
 const Post = ({ page, blocks }) => {
@@ -10,10 +10,7 @@ const Post = ({ page, blocks }) => {
   return (
     <Container>
       <Page
-        img={page.properties.Img?.url}
         title={page.properties.Name.title[0].text.content}
-        volumen={page.properties.Volumen?.number?.toString()}
-        amazon={page.properties.Amazon?.url || undefined}
         blocks={blocks}
       />
     </Container>
@@ -21,7 +18,7 @@ const Post = ({ page, blocks }) => {
 };
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(process.env.NOTION_OTAKU);
+  const database = await getDatabase(process.env.NOTION_BLOGS);
 
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),

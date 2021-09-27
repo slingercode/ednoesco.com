@@ -40,7 +40,7 @@ const renderBlock = (block) => {
     case 'bulleted_list_item':
     case 'numbered_list_item':
       return (
-        <li className="mb-2">
+        <li className="mb-2 list-inside">
           <Text id={id} text={value.text} />
         </li>
       );

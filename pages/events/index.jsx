@@ -1,12 +1,15 @@
 import Container from '../../components/Container';
-import Event from '../../components/timeline/event';
+import Event from '../../components/events/event';
+import useEvents from '../../hooks/events/events';
 import { getDatabase } from '../../lib/notion';
 
-const Timeline = ({ events }) => {
+const Events = ({ events }) => {
+  const { data } = useEvents(events);
+
   return (
-    <Container title="Slingercode - timeline">
+    <Container title="slingercode - events">
       <div className="grid md:grid-flow-row md:grid-cols-3 gap-3">
-        {events.map((event) => (
+        {data.map((event) => (
           <Event
             key={event.id}
             name={event.properties.Name.title[0].plain_text}
@@ -19,7 +22,7 @@ const Timeline = ({ events }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const sorts = [
     {
       property: 'Date',
@@ -27,17 +30,13 @@ export const getStaticProps = async () => {
     },
   ];
 
-  const database = await getDatabase(
-    process.env.NOTION_TABLE_TIMELINE_ID,
-    sorts
-  );
+  const database = await getDatabase(process.env.NOTION_EVENTS, sorts);
 
   return {
     props: {
       events: database,
     },
-    revalidate: 10,
   };
 };
 
-export default Timeline;
+export default Events;

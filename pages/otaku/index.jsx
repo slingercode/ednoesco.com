@@ -19,23 +19,25 @@ const Index = ({ posts, bonk }) => {
   } = usePosts(posts);
 
   return (
-    <Container title="Slingercode - Otaku">
+    <Container title="slingercode - otaku">
       {bonk && <Bonk />}
 
       <SearchBar handleOnValueChange={handleOnValueChange} />
 
-      {data.map((post) => (
-        <Article
-          key={post.id}
-          id={post.id}
-          img={post.properties.Img?.url}
-          title={post.properties.Name.title[0].text.content}
-          volumen={post.properties.Volumen?.number?.toString()}
-          author={post.properties.Author.rich_text[0].text.content}
-          genres={post.properties.Genres.multi_select}
-          status={post.properties.Status.select}
-        />
-      ))}
+      <div className="grid gap-4">
+        {data.map((post) => (
+          <Article
+            key={post.id}
+            id={post.id}
+            img={post.properties.Img?.url}
+            title={post.properties.Name.title[0].text.content}
+            volumen={post.properties.Volumen?.number?.toString()}
+            author={post.properties.Author.rich_text[0].text.content}
+            genres={post.properties.Genres.multi_select}
+            status={post.properties.Status.select}
+          />
+        ))}
+      </div>
 
       <Pagination
         total={total}
@@ -83,11 +85,7 @@ export const getServerSideProps = async (context) => {
         }
       : undefined;
 
-  const database = await getDatabase(
-    process.env.NOTION_TABLE_OTAKU_ID,
-    sorts,
-    filter
-  );
+  const database = await getDatabase(process.env.NOTION_OTAKU, sorts, filter);
 
   return {
     props: {
