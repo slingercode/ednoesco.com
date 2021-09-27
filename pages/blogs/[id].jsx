@@ -2,11 +2,20 @@ import Container from '../../components/Container';
 import Page from '../../components/blogs/Page';
 import { getDatabase, getStaticData } from '../../lib/notion';
 
-const Post = ({ page, blocks }) => (
-  <Container>
-    <Page title={page.properties.Name.title[0].text.content} blocks={blocks} />
-  </Container>
-);
+const Post = ({ page, blocks }) => {
+  if (!page || !blocks) {
+    return <Container />;
+  }
+
+  return (
+    <Container>
+      <Page
+        title={page.properties.Name.title[0].text.content}
+        blocks={blocks}
+      />
+    </Container>
+  );
+};
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(process.env.NOTION_BLOGS);
