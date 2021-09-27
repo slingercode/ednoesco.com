@@ -24,16 +24,18 @@ const Page = ({ img, title, volumen, amazon, blocks }) => (
       </div>
     )}
 
-    <Separator.Root className="bg-gray-border-non-interactive h-px mb-5 mt-1" />
+    <Separator.Root className="bg-gray-border-non-interactive h-px mb-4 mt-1" />
 
     {img && (
-      <Image
-        src={img}
-        alt={pageTitle()}
-        height={1250}
-        width={900}
-        className="rounded"
-      />
+      <div className="flex justify-center mb-4">
+        <Image
+          src={img}
+          alt={pageTitle()}
+          height={1250}
+          width={900}
+          className="rounded"
+        />
+      </div>
     )}
 
     {blocks.map((block) => (
