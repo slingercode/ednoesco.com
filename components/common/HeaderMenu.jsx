@@ -30,6 +30,8 @@ const HeaderMenu = () => (
 
         <HeaderMenuSub label="Tweets">
           <HeaderMenuItem link="/tweets/tech" label="Tech" />
+
+          <HeaderMenuItem link="/tweets/meme" label="Meme" />
         </HeaderMenuSub>
 
         <HeaderMenuSub

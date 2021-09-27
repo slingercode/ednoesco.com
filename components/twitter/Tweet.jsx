@@ -29,7 +29,7 @@ const Tweet = ({ tweet }) => (
         </div>
 
         {!!(tweet.media || []).length && (
-          <div className="flex mt-4">
+          <div className="flex mt-4 justify-center">
             {tweet.media.length === 1 && (
               <Image
                 key={tweet.media[0].media_key}
