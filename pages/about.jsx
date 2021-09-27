@@ -57,7 +57,7 @@ const About = () => {
 
           <li>
             <a
-              href="https://developers.notion.coomglol"
+              href="https://developers.notion.com"
               target="_blank"
               className="text-blue-font-low"
             >
