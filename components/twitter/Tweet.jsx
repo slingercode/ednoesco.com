@@ -30,15 +30,29 @@ const Tweet = ({ tweet }) => (
 
         {!!(tweet.media || []).length && (
           <div className="flex mt-4">
-            {tweet.media.map((media) => (
+            {tweet.media.length === 1 && (
               <Image
-                key={media.media_key}
-                width={media.width}
-                height={media.height}
+                key={tweet.media[0].media_key}
+                width={tweet.media[0].width}
+                height={tweet.media[0].height}
                 className="rounded-sm"
-                src={media[getUrlForTwitterMedia(media.type)]}
+                src={tweet.media[0][getUrlForTwitterMedia(tweet.media[0].type)]}
               />
-            ))}
+            )}
+
+            {tweet.media.length > 1 && tweet.media.length < 5 && (
+              <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-2">
+                {tweet.media.slice(0, 4).map((media) => (
+                  <Image
+                    key={media.media_key}
+                    width={media.width}
+                    height={media.height}
+                    className="rounded-sm"
+                    src={media[getUrlForTwitterMedia(media.type)]}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         )}
       </a>
