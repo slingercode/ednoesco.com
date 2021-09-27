@@ -16,6 +16,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "env-pull": "vercel env pull .env.local",
     "update-dependencies": "yarn add tailwindcss@latest postcss@latest autoprefixer@latest next@latest react react-dom && yarn add --dev @types/react eslint@latest eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest eslint-plugin-react-hooks@latest",
     "update-radix": "yarn add @radix-ui/colors @radix-ui/react-dropdown-menu @radix-ui/react-icons @radix-ui/react-id @radix-ui/react-separator @radix-ui/react-tooltip"
   },
