@@ -1,24 +1,18 @@
 import Container from '../../components/Container';
 import Page from '../../components/otaku/Page';
-import { getDatabase, getPage, getBlocks } from '../../lib/notion';
+import { getDatabase, getStaticData } from '../../lib/notion';
 
-const Post = ({ page, blocks }) => {
-  if (!page || !blocks) {
-    return <Container />;
-  }
-
-  return (
-    <Container>
-      <Page
-        img={page.properties.Img?.url}
-        title={page.properties.Name.title[0].text.content}
-        volumen={page.properties.Volumen?.number?.toString()}
-        amazon={page.properties.Amazon?.url || undefined}
-        blocks={blocks}
-      />
-    </Container>
-  );
-};
+const Post = ({ page, blocks }) => (
+  <Container>
+    <Page
+      img={page.properties.Img?.url}
+      title={page.properties.Name.title[0].text.content}
+      volumen={page.properties.Volumen?.number?.toString()}
+      amazon={page.properties.Amazon?.url || undefined}
+      blocks={blocks}
+    />
+  </Container>
+);
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(process.env.NOTION_TABLE_OTAKU_ID);
@@ -32,32 +26,12 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   try {
     const { id } = context.params;
-    const page = await getPage(id);
-    const blocks = await getBlocks(id);
-
-    const childBlocks = await Promise.all(
-      blocks
-        .filter((block) => block.has_children)
-        .map(async (block) => ({
-          id: block.id,
-          children: await getBlocks(block.id),
-        }))
-    );
-
-    const blocksWithChildren = blocks.map((block) => {
-      if (block.has_children && !block[block.type].children) {
-        block[block.type]['children'] = childBlocks.find(
-          (x) => x.id === block.id
-        )?.children;
-      }
-
-      return block;
-    });
+    const { page, blocks } = await getStaticData(id);
 
     return {
       props: {
         page,
-        blocks: blocksWithChildren,
+        blocks,
       },
       revalidate: 10,
     };
