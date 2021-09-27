@@ -4,7 +4,7 @@ import { getBlocks } from '../../lib/notion';
 import { getTweets } from '../../lib/twitter';
 
 const Meme = ({ tweets, errors }) => (
-  <Container title="tweets - memes 🤡">
+  <Container title="slingercode - tweets - memes 🤡">
     {!!errors.length && <div>Errors</div>}
 
     <div className="grid gap-4 md:px-10 lg:px-24">

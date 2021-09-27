@@ -7,7 +7,7 @@ const Events = ({ events }) => {
   const { data } = useEvents(events);
 
   return (
-    <Container title="Slingercode - timeline">
+    <Container title="slingercode - events">
       <div className="grid md:grid-flow-row md:grid-cols-3 gap-3">
         {data.map((event) => (
           <Event

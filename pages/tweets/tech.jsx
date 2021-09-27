@@ -4,7 +4,7 @@ import { getBlocks } from '../../lib/notion';
 import { getTweets } from '../../lib/twitter';
 
 const Tech = ({ tweets, errors }) => (
-  <Container title="tweets - tech 👨‍💻">
+  <Container title="slingercode - tweets - tech 👨‍💻">
     {!!errors.length && <div>Errors</div>}
 
     <div className="grid gap-4 md:px-10 lg:px-24">
