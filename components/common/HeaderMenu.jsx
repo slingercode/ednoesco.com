@@ -24,7 +24,7 @@ const HeaderMenu = () => (
 
         <DropdownMenu.Separator className="h-px bg-gray-border-non-interactive" />
 
-        <HeaderMenuItem link="/timeline" label="Timeline" />
+        <HeaderMenuItem link="/events" label="Events" />
 
         <DropdownMenu.Separator className="h-px bg-gray-border-non-interactive" />
 
