@@ -23,7 +23,14 @@ const Index = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-  const database = await getDatabase(process.env.NOTION_BLOGS);
+  const filter = {
+    property: 'Status',
+    select: {
+      does_not_equal: 'Writing',
+    },
+  };
+
+  const database = await getDatabase(process.env.NOTION_BLOGS, [], filter);
 
   return {
     props: {
