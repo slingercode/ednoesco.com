@@ -56,24 +56,24 @@ export const getStaticProps = async (context) => {
       };
     }
 
-    if (locale === 'en-US' && english !== '') {
-      return {
-        redirect: {
-          destination: `/es-MX/blogs/${english}`,
-          permanent: false,
-        },
-      };
-    }
+    // if (locale === 'en-US' && english !== '') {
+    //   return {
+    //     redirect: {
+    //       destination: `/es-MX/blogs/${english}`,
+    //       permanent: false,
+    //     },
+    //   };
+    // }
 
-    if (locale === 'es-MX' && spanish !== '') {
-      console.log('here');
-      return {
-        redirect: {
-          destination: `/blogs/${spanish}`,
-          permanent: false,
-        },
-      };
-    }
+    // if (locale === 'es-MX' && spanish !== '') {
+    //   console.log('here');
+    //   return {
+    //     redirect: {
+    //       destination: `/blogs/${spanish}`,
+    //       permanent: false,
+    //     },
+    //   };
+    // }
 
     return {
       props: {
