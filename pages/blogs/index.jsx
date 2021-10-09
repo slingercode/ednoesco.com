@@ -1,34 +1,48 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 
 import Container from '../../components/Container';
 import Article from '../../components/blogs/Article';
+import Warning from '../../components/common/Warning';
 import usePosts from '../../hooks/blogs/usePosts';
 import { getDatabase } from '../../lib/notion';
 
 const Index = ({ posts }) => {
+  const { t } = useTranslation();
   const { locale } = useRouter();
   const { data } = usePosts(posts, locale);
 
   return (
     <Container title="slingercode - blogs">
-      <div className="bg-yellow-solid text-gray-background-main">
-        Warning if not blogs
-      </div>
+      <Warning className="flex mb-10">
+        <div className="flex items-center">
+          <ExclamationTriangleIcon height={20} width={20} />
+        </div>
 
-      <div className="my-5">
-        {locale === 'en-US' && (
-          <Link href="/blogs" locale="es-MX">
-            A español
-          </Link>
-        )}
+        <div className="flex flex-col pl-5">
+          <div>{t('blogs:alert')}</div>
 
-        {locale === 'es-MX' && (
-          <Link href="/blogs" locale="en-US">
-            To inglish
-          </Link>
-        )}
-      </div>
+          <div>
+            {t('blogs:change-language')}
+            <span className="pl-1 underline font-bold">
+              {locale === 'en-US' && (
+                <Link href="/blogs" locale="es-MX">
+                  <a>{t('common:spanish')}</a>
+                </Link>
+              )}
+
+              {locale === 'es-MX' && (
+                <Link href="/blogs" locale="en-US">
+                  <a>{t('common:english')}</a>
+                </Link>
+              )}
+            </span>
+          </div>
+        </div>
+      </Warning>
 
       <div className="grid gap-4">
         {data.map((post) => (
@@ -45,7 +59,9 @@ const Index = ({ posts }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context) => {
+  const { locale } = context;
+
   const filter = {
     property: 'Status',
     select: {
@@ -58,6 +74,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       posts: database,
+      ...(await serverSideTranslations(locale, ['common', 'blogs'])),
     },
     revalidate: 10,
   };

@@ -1,19 +1,56 @@
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import Container from '../../components/Container';
 import Page from '../../components/blogs/Page';
+import Warning from '../../components/common/Warning';
+import LinkLanguage from '../../components/blogs/LinkLanguage';
 import { getDatabase, getStaticData } from '../../lib/notion';
 
 const Post = ({ page, blocks, i18n }) => {
+  const { t } = useTranslation();
+
   if (!page || !blocks) {
     return <Container />;
   }
 
   return (
     <Container>
-      {!i18n && (
-        <div className="bg-yellow-solid text-gray-background-main mb-5">
-          Warning if blog not translated
+      {(!i18n.sameLanguage || !i18n.i18nEnglish || !i18n.i18nSpanish) && (
+        <div className="mb-10">
+          {!i18n.sameLanguage && (
+            <Warning className="mb-2">{t('blogs:diferent-language')}</Warning>
+          )}
+
+          {!i18n.spanish && <Warning>{t('blogs:no-español')}</Warning>}
+
+          {!i18n.english && <Warning>{t('blogs:no-english')}</Warning>}
         </div>
       )}
+
+      <div className="mb-10">
+        {i18n.i18nEnglish && (
+          <LinkLanguage
+            id={i18n.english}
+            i18n={i18n}
+            locale="en-US"
+            language="English"
+          >
+            {t('common:raw-english')}
+          </LinkLanguage>
+        )}
+
+        {i18n.i18nSpanish && (
+          <LinkLanguage
+            id={i18n.spanish}
+            i18n={i18n}
+            locale="es-MX"
+            language="Spanish"
+          >
+            {t('common:raw-spanish')}
+          </LinkLanguage>
+        )}
+      </div>
 
       <Page
         title={page.properties.Name.title[0].text.content}
@@ -42,44 +79,22 @@ export const getStaticProps = async (context) => {
     const english = page.properties.English.rich_text[0]?.plain_text || '';
     const spanish = page.properties.Spanish.rich_text[0]?.plain_text || '';
 
-    if (
-      (locale === 'en-US' && language === 'English') ||
-      (locale === 'es-MX' && language === 'Spanish')
-    ) {
-      return {
-        props: {
-          page,
-          blocks,
-          i18n: true,
-        },
-        revalidate: 10,
-      };
-    }
-
-    // if (locale === 'en-US' && english !== '') {
-    //   return {
-    //     redirect: {
-    //       destination: `/es-MX/blogs/${english}`,
-    //       permanent: false,
-    //     },
-    //   };
-    // }
-
-    // if (locale === 'es-MX' && spanish !== '') {
-    //   console.log('here');
-    //   return {
-    //     redirect: {
-    //       destination: `/blogs/${spanish}`,
-    //       permanent: false,
-    //     },
-    //   };
-    // }
-
     return {
       props: {
         page,
         blocks,
-        i18n: false,
+        i18n: {
+          spanish,
+          english,
+          locale,
+          language,
+          sameLanguage:
+            (locale === 'en-US' && language === 'English') ||
+            (locale === 'es-MX' && language === 'Spanish'),
+          i18nSpanish: spanish !== '',
+          i18nEnglish: english !== '',
+        },
+        ...(await serverSideTranslations(locale, ['common', 'blogs'])),
       },
       revalidate: 10,
     };

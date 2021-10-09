@@ -1,13 +1,12 @@
+const { i18n } = require('./next-i18next.config');
+
 module.exports = {
+  i18n,
   future: {
     webpack5: true,
   },
   images: {
     domains: ['res.cloudinary.com', 'pbs.twimg.com'],
-  },
-  i18n: {
-    locales: ['en-US', 'es-MX'],
-    defaultLocale: 'en-US',
   },
   async headers() {
     return [
