@@ -6,7 +6,7 @@ const Footer = () => (
     <Separator.Root className="h-px bg-gray-border-non-interactive" />
 
     <div className="flex justify-center mt-4">
-      <Link href="/about">
+      <Link href="/about" locale="en-US">
         <a className="text-gray-font-low">about</a>
       </Link>
     </div>

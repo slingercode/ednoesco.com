@@ -1,13 +1,35 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import Container from '../../components/Container';
 import Article from '../../components/blogs/Article';
 import usePosts from '../../hooks/blogs/usePosts';
 import { getDatabase } from '../../lib/notion';
 
 const Index = ({ posts }) => {
-  const { data } = usePosts(posts);
+  const { locale } = useRouter();
+  const { data } = usePosts(posts, locale);
 
   return (
     <Container title="slingercode - blogs">
+      <div className="bg-yellow-solid text-gray-background-main">
+        Warning if not blogs
+      </div>
+
+      <div className="my-5">
+        {locale === 'en-US' && (
+          <Link href="/blogs" locale="es-MX">
+            A español
+          </Link>
+        )}
+
+        {locale === 'es-MX' && (
+          <Link href="/blogs" locale="en-US">
+            To inglish
+          </Link>
+        )}
+      </div>
+
       <div className="grid gap-4">
         {data.map((post) => (
           <Article
@@ -15,6 +37,7 @@ const Index = ({ posts }) => {
             id={post.id}
             title={post.properties.Name.title[0].text.content}
             status={post.properties.Status.select.name}
+            language={post.properties.Language.select.name}
           />
         ))}
       </div>
@@ -26,7 +49,7 @@ export const getStaticProps = async () => {
   const filter = {
     property: 'Status',
     select: {
-      does_not_equal: 'Writing',
+      equals: 'Published',
     },
   };
 

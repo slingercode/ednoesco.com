@@ -5,6 +5,10 @@ module.exports = {
   images: {
     domains: ['res.cloudinary.com', 'pbs.twimg.com'],
   },
+  i18n: {
+    locales: ['en-US', 'es-MX'],
+    defaultLocale: 'en-US',
+  },
   async headers() {
     return [
       {
