@@ -99,6 +99,7 @@ export const getStaticProps = async (context) => {
       revalidate: 10,
     };
   } catch (error) {
+    console.error(error);
     return {
       redirect: {
         destination: '/',
