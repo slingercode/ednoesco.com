@@ -1,7 +1,6 @@
-const { i18n } = require('./next-i18next.config');
+const nextTranslate = require('next-translate');
 
-module.exports = {
-  i18n,
+module.exports = nextTranslate({
   future: {
     webpack5: true,
   },
@@ -29,4 +28,4 @@ module.exports = {
       },
     ];
   },
-};
+});

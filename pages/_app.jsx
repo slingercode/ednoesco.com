@@ -1,5 +1,4 @@
 import { IdProvider } from '@radix-ui/react-id';
-import { appWithTranslation } from 'next-i18next';
 
 import AppContainer from '../components/AppContainer';
 
@@ -13,4 +12,4 @@ const Slingercode = ({ Component, pageProps }) => (
   </IdProvider>
 );
 
-export default appWithTranslation(Slingercode);
+export default Slingercode;

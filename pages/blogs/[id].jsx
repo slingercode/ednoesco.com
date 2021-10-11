@@ -1,5 +1,4 @@
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import useTranslation from 'next-translate/useTranslation';
 
 import Container from '../../components/Container';
 import Page from '../../components/blogs/Page';
@@ -94,7 +93,6 @@ export const getStaticProps = async (context) => {
           i18nSpanish: spanish !== '',
           i18nEnglish: english !== '',
         },
-        ...(await serverSideTranslations(locale, ['common', 'blogs'])),
       },
       revalidate: 10,
     };

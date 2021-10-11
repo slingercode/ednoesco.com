@@ -1,7 +1,6 @@
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 
 import Container from '../../components/Container';
@@ -74,7 +73,6 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       posts: database,
-      ...(await serverSideTranslations(locale, ['common', 'blogs'])),
     },
     revalidate: 10,
   };
