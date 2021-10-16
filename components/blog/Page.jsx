@@ -11,7 +11,7 @@ const Page = ({ title, blocks }) => {
 
   return (
     <div>
-      <Title>{title}</Title>
+      <Title size="large">{title}</Title>
 
       {blocks.map((block) => (
         <Fragment key={block.id}>{renderBlock(block)}</Fragment>

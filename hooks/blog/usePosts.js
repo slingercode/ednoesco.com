@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const usePosts = (posts, locale) => {
+const usePosts = (posts = [], locale) => {
   const mapping = {
     'en-US': 'English',
     'es-MX': 'Spanish',

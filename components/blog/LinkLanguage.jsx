@@ -2,7 +2,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 
 const LinkLanguage = ({ id, i18n, locale, language, children }) => (
-  <Link href={`/blogs/${id}`} locale={locale}>
+  <Link href={`/blog/${id}`} locale={locale}>
     <a
       className={clsx('hover:text-gray-font-low mr-3', {
         ['pointer-events-none underline text-gray-font-low']:

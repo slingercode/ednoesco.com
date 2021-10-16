@@ -1,9 +1,9 @@
 import useTranslation from 'next-translate/useTranslation';
 
 import Container from '../../components/Container';
-import Page from '../../components/blogs/Page';
+import Page from '../../components/blog/Page';
 import Warning from '../../components/common/Warning';
-import LinkLanguage from '../../components/blogs/LinkLanguage';
+import LinkLanguage from '../../components/blog/LinkLanguage';
 import { getDatabase, getStaticData } from '../../lib/notion';
 
 const Post = ({ page, blocks, i18n }) => {
@@ -18,12 +18,12 @@ const Post = ({ page, blocks, i18n }) => {
       {(!i18n.sameLanguage || !i18n.i18nEnglish || !i18n.i18nSpanish) && (
         <div className="mb-10">
           {!i18n.sameLanguage && (
-            <Warning className="mb-2">{t('blogs:diferent-language')}</Warning>
+            <Warning className="mb-2">{t('blog:diferent-language')}</Warning>
           )}
 
-          {!i18n.spanish && <Warning>{t('blogs:no-español')}</Warning>}
+          {!i18n.spanish && <Warning>{t('blog:no-español')}</Warning>}
 
-          {!i18n.english && <Warning>{t('blogs:no-english')}</Warning>}
+          {!i18n.english && <Warning>{t('blog:no-english')}</Warning>}
         </div>
       )}
 
@@ -60,7 +60,7 @@ const Post = ({ page, blocks, i18n }) => {
 };
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(process.env.NOTION_BLOGS);
+  const database = await getDatabase(process.env.NOTION_BLOG);
 
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
@@ -97,7 +97,6 @@ export const getStaticProps = async (context) => {
       revalidate: 10,
     };
   } catch (error) {
-    console.error(error);
     return {
       redirect: {
         destination: '/',
