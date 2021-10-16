@@ -47,14 +47,14 @@ const Page = ({ img, title, volumen, amazon, blocks }) => {
       ))}
 
       <div className="mt-5">
-        <Link href="/otaku" locale="en-US">
-          <a
-            className="text-blue-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
-            onClick={() => router.back()}
-          >
-            Go back
-          </a>
-        </Link>
+        {/* <Link href="/otaku" locale="en-US"> */}
+        <a
+          className="text-blue-font-low cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
+          onClick={() => router.back()}
+        >
+          Go back
+        </a>
+        {/* </Link> */}
       </div>
     </div>
   );
