@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 
 import Title from '../notion/ArticleTitle';
 import renderBlock from '../notion/Block';
 
 const Page = ({ title, blocks }) => {
+  const { t } = useTranslation();
   const router = useRouter();
 
   return (
@@ -17,14 +18,12 @@ const Page = ({ title, blocks }) => {
       ))}
 
       <div className="mt-5">
-        {/* <Link href="/blogs"> */}
         <a
           className="text-blue-font-low cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
           onClick={() => router.back()}
         >
-          Go back.
+          {t('common:go-back')}
         </a>
-        {/* </Link> */}
       </div>
     </div>
   );

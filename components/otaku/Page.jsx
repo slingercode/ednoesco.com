@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as Separator from '@radix-ui/react-separator';
@@ -47,14 +46,12 @@ const Page = ({ img, title, volumen, amazon, blocks }) => {
       ))}
 
       <div className="mt-5">
-        {/* <Link href="/otaku" locale="en-US"> */}
         <a
           className="text-blue-font-low cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
           onClick={() => router.back()}
         >
           Go back
         </a>
-        {/* </Link> */}
       </div>
     </div>
   );
