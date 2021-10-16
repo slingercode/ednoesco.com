@@ -32,6 +32,7 @@
     "clsx": "^1.1.1",
     "gregorian": "^6.0.0",
     "next": "^10.2.3",
+    "next-translate": "^1.1.1",
     "postcss": "^8.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
