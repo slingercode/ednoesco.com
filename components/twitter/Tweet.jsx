@@ -4,7 +4,7 @@ import { ChevronRightIcon, ChatBubbleIcon } from '@radix-ui/react-icons';
 
 import { getUrlForTwitterMedia } from '../../utils/helpers';
 
-const dateFormat = reform('N, d Y G:T P');
+const dateFormat = reform('N d, Y G:T P');
 
 const Tweet = ({ tweet }) => (
   <div className="flex flex-col justify-between border rounded p-4">

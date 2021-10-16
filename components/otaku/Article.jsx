@@ -41,7 +41,7 @@ const Page = ({ id, img, title, volumen, author, genres, status }) => (
         </div>
 
         <div>
-          <Link href={`/otaku/${id}`}>
+          <Link href={`/otaku/${id}`} locale="en-US">
             <a className="text-blue-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md">
               WTF is this?
             </a>
