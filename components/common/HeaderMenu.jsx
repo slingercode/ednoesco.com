@@ -20,7 +20,7 @@ const HeaderMenu = () => (
       className="bg-gray-background-component p-1 rounded-md"
     >
       <DropdownMenu.Root>
-        <HeaderMenuItem link="/blogs" label="Blogs" />
+        <HeaderMenuItem link="/blog" label="Blog" />
 
         <DropdownMenu.Separator className="h-px bg-gray-border-non-interactive" />
 

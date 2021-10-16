@@ -1,0 +1,7 @@
+{
+  "alert": "The blogs that are showing are based on the current language selection",
+  "change-language": "You can change the language here:",
+  "diferent-language": "You are seeing a language other than requested",
+  "no-english": "No translation into english",
+  "no-español": "No translation into spanish"
+}
