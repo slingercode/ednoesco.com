@@ -6,6 +6,41 @@ import { getUrlForTwitterMedia } from '../../utils/helpers';
 
 const dateFormat = reform('N d, Y G:T P');
 
+const TweetMedia = ({ media, total }) => (
+  <div className="relative">
+    <Image
+      key={media.media_key}
+      width={media.width}
+      height={media.height}
+      className="rounded-sm"
+      src={media[getUrlForTwitterMedia(media.type)]}
+    />
+
+    {(media.type === 'video' || media.type === 'animated_gif') && (
+      <div className="bg-white text-blue-font-low rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-16 w-16 sm:h-20 sm:w-20 -m-1"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </div>
+    )}
+
+    {total > 1 && (
+      <div className="absolute bottom-3 right-3 bg-gray-solid px-2 rounded-md">
+        <div>Media +{total}</div>
+      </div>
+    )}
+  </div>
+);
+
 const Tweet = ({ tweet }) => (
   <div className="flex flex-col justify-between border rounded p-4">
     <div className="flex flex-col">
@@ -30,29 +65,7 @@ const Tweet = ({ tweet }) => (
 
         {!!(tweet.media || []).length && (
           <div className="flex mt-4 justify-center">
-            {tweet.media.length === 1 && (
-              <Image
-                key={tweet.media[0].media_key}
-                width={tweet.media[0].width}
-                height={tweet.media[0].height}
-                className="rounded-sm"
-                src={tweet.media[0][getUrlForTwitterMedia(tweet.media[0].type)]}
-              />
-            )}
-
-            {tweet.media.length > 1 && tweet.media.length < 5 && (
-              <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-2">
-                {tweet.media.slice(0, 4).map((media) => (
-                  <Image
-                    key={media.media_key}
-                    width={media.width}
-                    height={media.height}
-                    className="rounded-sm"
-                    src={media[getUrlForTwitterMedia(media.type)]}
-                  />
-                ))}
-              </div>
-            )}
+            <TweetMedia media={tweet.media[0]} total={tweet.media.length} />
           </div>
         )}
       </a>
