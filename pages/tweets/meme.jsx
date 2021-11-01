@@ -1,11 +1,12 @@
 import Container from '../../components/Container';
+import Errors from '../../components/twitter/Errors';
 import Tweet from '../../components/twitter/Tweet';
 import { getBlocks } from '../../lib/notion';
 import { getTweets } from '../../lib/twitter';
 
 const Meme = ({ tweets, errors }) => (
   <Container title="slingercode - tweets - memes 🤡">
-    {!!errors.length && <div>Errors</div>}
+    {!!errors.length && <Errors />}
 
     <div className="grid gap-4 md:px-10 lg:px-24">
       {tweets.map((tweet) => (
