@@ -1,9 +1,6 @@
 const nextTranslate = require('next-translate');
 
 module.exports = nextTranslate({
-  future: {
-    webpack5: true,
-  },
   images: {
     domains: ['res.cloudinary.com', 'pbs.twimg.com'],
   },
