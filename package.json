@@ -21,7 +21,7 @@
     "update-radix": "yarn add @radix-ui/colors @radix-ui/react-dropdown-menu @radix-ui/react-icons @radix-ui/react-separator @radix-ui/react-tooltip"
   },
   "dependencies": {
-    "@notionhq/client": "^0.2.3",
+    "@notionhq/client": "^0.4.12",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-dropdown-menu": "^0.1.4",
     "@radix-ui/react-icons": "^1.0.3",
@@ -31,7 +31,7 @@
     "clsx": "^1.1.1",
     "gregorian": "^6.0.0",
     "next": "^12.0.7",
-    "next-translate": "^1.1.1",
+    "next-translate": "^1.2.0",
     "postcss": "^8.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
