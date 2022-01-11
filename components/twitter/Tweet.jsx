@@ -17,7 +17,7 @@ const TweetMedia = ({ media, total }) => (
     />
 
     {(media.type === 'video' || media.type === 'animated_gif') && (
-      <div className="bg-white text-blue-font-low rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-white text-blue-font-low rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-16 w-16 sm:h-20 sm:w-20 -m-1"
