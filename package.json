@@ -21,7 +21,7 @@
     "update-radix": "yarn add @radix-ui/colors @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-icons @radix-ui/react-separator @radix-ui/react-tooltip"
   },
   "dependencies": {
-    "@notionhq/client": "^0.4.12",
+    "@notionhq/client": "^1.0.3",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-dropdown-menu": "^0.1.6",
