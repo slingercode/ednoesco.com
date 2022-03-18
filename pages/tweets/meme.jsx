@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
   const blocks = await getBlocks(process.env.NOTION_MEME_TWEETS);
 
   const ids = (blocks || [])
-    .map(({ toggle }) => toggle?.text[0]?.plain_text || undefined)
+    .map(({ toggle }) => toggle?.rich_text[0]?.plain_text || undefined)
     .filter((value) => value);
 
   const { tweets, errors } = await getTweets(ids);
