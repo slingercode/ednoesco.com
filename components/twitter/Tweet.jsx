@@ -119,7 +119,7 @@ const Tweet = ({ tweet }) => (
         <ChatBubbleIcon />
 
         <span className="ml-2 mr-4">
-          {formatTweetMetrics(tweet.public_metrics.retweet_count)}
+          {formatTweetMetrics(tweet.public_metrics.reply_count)}
         </span>
 
         <ChevronRightIcon />
