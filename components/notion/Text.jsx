@@ -33,7 +33,7 @@ const Text = ({ id, text }) => {
           ['italic']: italic,
           ['line-through']: strikethrough,
           ['underline']: underline,
-          ['bg-gray-background-code text-gray-font-low font-mono px-2 py-1 rounded-md']:
+          ['bg-gray-background-code text-crimson-font-low font-mono mx-1 px-2 py-1 rounded-sm text-xs']:
             code,
         })}
       >
