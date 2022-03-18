@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { reform } from 'gregorian';
 import { ChevronRightIcon, ChatBubbleIcon } from '@radix-ui/react-icons';
 
-import { getUrlForTwitterMedia } from '../../utils/helpers';
+import { getUrlForTwitterMedia, formatTweetMetrics } from '../../utils/helpers';
 
 const dateFormat = reform('N d, Y G:T P');
 
@@ -104,16 +104,20 @@ const Tweet = ({ tweet }) => (
           />
         </svg>
 
-        <span className="ml-1">{tweet.public_metrics.like_count}</span>
+        <span className="ml-1">
+          {formatTweetMetrics(tweet.public_metrics.like_count)}
+        </span>
 
-        <span className="ml-4">RT - {tweet.public_metrics.retweet_count}</span>
+        <span className="ml-4">
+          RT - {formatTweetMetrics(tweet.public_metrics.retweet_count)}
+        </span>
       </div>
 
       <div className="flex items-center">
         <ChatBubbleIcon />
 
         <span className="ml-2 mr-4">
-          {tweet.public_metrics.retweet_count} replies
+          {formatTweetMetrics(tweet.public_metrics.retweet_count)}
         </span>
 
         <ChevronRightIcon />
