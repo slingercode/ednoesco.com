@@ -59,7 +59,9 @@ const Status = ({ status }) => {
         asChild
         className="cursor-pointer appearance-none focus:outline-none"
       >
-        <button onClick={() => setOpen(!open)}>{getIcon(status)}</button>
+        <button aria-label={status} onClick={() => setOpen(!open)}>
+          {getIcon(status)}
+        </button>
       </Tooltip.Trigger>
 
       <Tooltip.Content

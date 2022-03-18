@@ -8,6 +8,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta name="description" content="slingercode personal website" />
+
           {/* Open Graph */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content={config['og-title']} />
