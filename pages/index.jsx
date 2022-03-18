@@ -33,7 +33,7 @@ const Index = ({ blog }) => {
         </div>
 
         <div className="w-2/6 flex justify-center items-center">
-          <Image src="/me.png" width={150} height={150} />
+          <Image src="/me.png" width={150} height={150} alt="me" />
         </div>
       </div>
 

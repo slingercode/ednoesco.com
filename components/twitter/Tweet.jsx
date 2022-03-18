@@ -13,6 +13,7 @@ const TweetMedia = ({ media, total }) => (
       width={media.width}
       height={media.height}
       className="rounded-sm"
+      alt="Media content"
       src={media[getUrlForTwitterMedia(media.type)]}
     />
 
@@ -49,6 +50,7 @@ const Tweet = ({ tweet }) => (
           width={50}
           height={50}
           className="rounded-full"
+          alt={`Profile picture: ${tweet.author.name}`}
           src={tweet.author.profile_image_url}
         />
 
