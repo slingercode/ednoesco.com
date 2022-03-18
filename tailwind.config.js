@@ -14,7 +14,7 @@ const {
 } = require('@radix-ui/colors');
 
 module.exports = {
-  purge: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
+  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
@@ -33,6 +33,9 @@ module.exports = {
           solid: yellowDark.yellow9,
           font: {
             low: yellowDark.yellow11,
+          },
+          background: {
+            component: yellowDark.yellow3,
           },
         },
         purple: {
@@ -83,16 +86,6 @@ module.exports = {
           },
         },
       },
-    },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ['active'],
-      borderColor: ['focus-visible'],
-      borderRadius: ['focus-visible'],
-      outline: ['focus-visible'],
-      ringWidth: ['focus-visible'],
-      ringColor: ['focus-visible'],
     },
   },
   plugins: [],

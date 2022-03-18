@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { reform } from 'gregorian';
 import { ChevronRightIcon, ChatBubbleIcon } from '@radix-ui/react-icons';
 
-import { getUrlForTwitterMedia } from '../../utils/helpers';
+import { getUrlForTwitterMedia, formatTweetMetrics } from '../../utils/helpers';
 
 const dateFormat = reform('N d, Y G:T P');
 
@@ -17,7 +17,7 @@ const TweetMedia = ({ media, total }) => (
     />
 
     {(media.type === 'video' || media.type === 'animated_gif') && (
-      <div className="bg-white text-blue-font-low rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-white text-blue-font-low rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-16 w-16 sm:h-20 sm:w-20 -m-1"
@@ -104,16 +104,20 @@ const Tweet = ({ tweet }) => (
           />
         </svg>
 
-        <span className="ml-1">{tweet.public_metrics.like_count}</span>
+        <span className="ml-1">
+          {formatTweetMetrics(tweet.public_metrics.like_count)}
+        </span>
 
-        <span className="ml-4">RT - {tweet.public_metrics.retweet_count}</span>
+        <span className="ml-4">
+          RT - {formatTweetMetrics(tweet.public_metrics.retweet_count)}
+        </span>
       </div>
 
       <div className="flex items-center">
         <ChatBubbleIcon />
 
         <span className="ml-2 mr-4">
-          {tweet.public_metrics.retweet_count} replies
+          {formatTweetMetrics(tweet.public_metrics.retweet_count)}
         </span>
 
         <ChevronRightIcon />
