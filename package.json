@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/slingercode/_slingercode"
+    "url": "https://github.com/slingercode/slingercode"
   },
   "scripts": {
     "dev": "next dev",
@@ -18,11 +18,12 @@
     "start": "next start",
     "env-pull": "vercel env pull .env.local",
     "update-dependencies": "yarn add tailwindcss@latest postcss@latest autoprefixer@latest next@latest react react-dom && yarn add --dev @types/react eslint@latest eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest eslint-plugin-react-hooks@latest",
-    "update-radix": "yarn add @radix-ui/colors @radix-ui/react-dropdown-menu @radix-ui/react-icons @radix-ui/react-separator @radix-ui/react-tooltip"
+    "update-radix": "yarn add @radix-ui/colors @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-icons @radix-ui/react-separator @radix-ui/react-tooltip"
   },
   "dependencies": {
     "@notionhq/client": "^0.4.12",
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-dialog": "^0.1.5",
     "@radix-ui/react-dropdown-menu": "^0.1.4",
     "@radix-ui/react-icons": "^1.0.3",
     "@radix-ui/react-separator": "^0.1.3",
