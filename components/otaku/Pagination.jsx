@@ -20,6 +20,7 @@ const Pagination = ({
       <div className="flex">
         {!disablePrev && (
           <button
+            aria-label="Previous"
             className="hover:bg-gray-background-hover active:bg-gray-background-active border border-transparent hover:border-gray-border-hover p-1 rounded-md focus:outline-none focus:ring focus:border-gray-border-interactive focus:ring-gray-border-interactive"
             onClick={() => setCurrentPage((prev) => prev - 1)}
           >
@@ -33,6 +34,7 @@ const Pagination = ({
 
         {!disableNext && (
           <button
+            aria-label="Next"
             className="hover:bg-gray-background-hover active:bg-gray-background-active border border-transparent hover:border-gray-border-hover p-1 rounded-md focus:outline-none focus:ring focus:border-gray-border-interactive focus:ring-gray-border-interactive"
             onClick={() => setCurrentPage((prev) => prev + 1)}
           >
