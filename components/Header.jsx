@@ -18,6 +18,7 @@ const Header = () => (
         href="https://slingercode.url.lol/github"
         rel="noreferrer"
         target="_blank"
+        aria-label="github.com"
         className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
       >
         <GitHubLogoIcon height={20} width={20} />
@@ -27,6 +28,7 @@ const Header = () => (
         href="https://slingercode.url.lol/twitter"
         rel="noreferrer"
         target="_blank"
+        aria-label="twitter.com"
         className="mr-5 hover:text-gray-font-low focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
       >
         <TwitterLogoIcon height={20} width={20} />

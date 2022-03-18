@@ -33,7 +33,7 @@ const Page = ({ img, title, volumen, amazon, blocks }) => {
         <div className="flex justify-center mb-4">
           <Image
             src={img}
-            alt={pageTitle()}
+            alt={pageTitle(title, volumen)}
             height={1250}
             width={900}
             className="rounded"
@@ -46,12 +46,12 @@ const Page = ({ img, title, volumen, amazon, blocks }) => {
       ))}
 
       <div className="mt-5">
-        <a
+        <button
           className="text-blue-font-low cursor-pointer focus-visible:outline-none focus-visible:ring focus-visible:border-gray-border-interactive focus-visible:ring-gray-border-interactive focus-visible:rounded-md"
           onClick={() => router.back()}
         >
           Go back
-        </a>
+        </button>
       </div>
     </div>
   );
