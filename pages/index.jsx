@@ -19,7 +19,7 @@ const Index = ({ blog }) => {
           <div className="pt-2">
             <h2 className="text-md md:text-xl lg:text-2xl text-gray-font-low">
               {'React Developer at '}
-              <span>
+              <span className="hover:text-green-font-low">
                 <a
                   href="https://twitter.com/GrainChainIO"
                   rel="noreferrer"
@@ -42,8 +42,8 @@ const Index = ({ blog }) => {
           Hi! Welcome to my little space on the wide internet 😁
         </h3>
 
-        <div className="pt-4">
-          <p>
+        <div className="md:px-8 lg:px-15 xl:px-32 my-10">
+          <p className="text-sm text-justify">
             This is my personal web page in which i want to leave my digital
             fingerprint (a healthy one), share my hobbies and start writing some
             of my interests as a remainder on how I'm improving 🙂
