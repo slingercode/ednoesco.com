@@ -39,8 +39,6 @@ const Meenreferencia = ({ data, token }) => {
 
   return (
     <div className="mb-24">
-      <div className="mb-5">meenreferencia</div>
-
       {error && <Warning className="mb-10">{error}</Warning>}
 
       <div className="grid grid-flow-row gap-5 md:grid-flow-col">
@@ -49,7 +47,7 @@ const Meenreferencia = ({ data, token }) => {
             key={value.id}
             className="p-3 border border-gray-border-interactive hover:border-gray-border-hover"
           >
-            <div className="text-center text-xl">{value.id}</div>
+            <div className="text-center text-xl capitalize">{value.id}</div>
 
             <div className="mt-10 mb-10 text-center text-6xl">
               {value.count}

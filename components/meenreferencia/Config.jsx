@@ -42,7 +42,7 @@ const Config = ({ value, loading, handleAction }) => {
             className="hover:bg-gray-background-hover active:bg-gray-background-active text-gray-font-low hover:text-gray-font-high border-gray-border-interactive hover:border-gray-border-hover focus:outline-none focus:ring focus:border-gray-border-interactive focus:ring-gray-border-interactive border w-full rounded-md"
             onClick={() => handleAction(value.id, 'decrement')}
           >
-            restar
+            Restar
           </button>
         </div>
 
@@ -50,7 +50,7 @@ const Config = ({ value, loading, handleAction }) => {
           <div className="w-5/6">
             <input
               disabled={checked === 'indeterminate'}
-              placeholder="asdf"
+              placeholder="Nuevo valor"
               className="w-full px-2 py-1 flex-1 bg-gray-background-component hover:bg-gray-background-hover rounded-md border border-gray-border-interactive hover:border-gray-border-hover focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-border-interactive focus-visible:border-gray-border-hover"
             />
           </div>
