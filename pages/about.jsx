@@ -74,6 +74,26 @@ const About = () => {
               OMG.LOL
             </a>
           </li>
+
+          <li>
+            <a
+              href="https://planetscale.com/"
+              target="_blank"
+              className="text-blue-font-low"
+            >
+              PlanetScale
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.prisma.io"
+              target="_blank"
+              className="text-blue-font-low"
+            >
+              Prisma
+            </a>
+          </li>
         </ul>
       </div>
     </Container>
