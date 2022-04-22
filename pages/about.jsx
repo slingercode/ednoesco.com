@@ -1,100 +1,72 @@
-import Link from 'next/link';
-
 import Container from '../components/Container';
 
 const About = () => {
+  const coolTechs = [
+    {
+      name: 'Vercel',
+      link: 'https://vercel.com',
+      icon: '',
+    },
+    {
+      name: 'Next.js',
+      link: 'https://nextjs.org',
+      icon: '',
+    },
+    {
+      name: 'TailwindCSS',
+      link: 'https://tailwindcss.com',
+      icon: '',
+    },
+    {
+      name: 'Radix UI',
+      link: 'https://radix-ui.com',
+      icon: '',
+    },
+    {
+      name: 'Notion API',
+      link: 'https://developers.notion.com',
+      icon: '',
+    },
+    {
+      name: 'OMG.LOL',
+      link: 'https://omg.lol',
+      icon: '',
+    },
+    {
+      name: 'PlanetScale',
+      link: 'https://planetscale.com',
+      icon: '',
+    },
+    {
+      name: 'Prisma',
+      link: 'https://prisma.io',
+      icon: '',
+    },
+  ];
+
   return (
     <Container title="slingercode - about">
       <div>
-        <h2>WIP: This module is not ready yet</h2>
+        <h1 className="cursor-default text-center text-2xl mb-10">
+          Cool Tech 🤯
+        </h1>
 
-        <br />
+        <h2 className="cursor-default text-center text-lg mb-10">
+          This is what i use to build this website 🙃
+        </h2>
 
-        <h2>Cool Tech 🤯</h2>
-
-        <p>This is what i use to build this website 🙃</p>
-
-        <ul className="list-disc list-inside">
-          <li>
+        <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
+          {coolTechs.map((tech) => (
             <a
-              href="https://vercel.com"
+              key={tech.name}
+              href={tech.link}
               target="_blank"
-              className="text-blue-font-low"
+              className="p-3 rounded-lg border-2 border-gray-border-interactive hover:shadow-[3px_3px] hover:shadow-gray-border-interactive"
             >
-              Vercel
+              {tech.name}
             </a>
-          </li>
-
-          <li>
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              Next.js
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://tailwindcss.com"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              Tailwind
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.radix-ui.com"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              Radix UI
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://developers.notion.com"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              Notion API
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://omg.lol"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              OMG.LOL
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://planetscale.com/"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              PlanetScale
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.prisma.io"
-              target="_blank"
-              className="text-blue-font-low"
-            >
-              Prisma
-            </a>
-          </li>
-        </ul>
+          ))}
+        </div>
       </div>
     </Container>
   );
