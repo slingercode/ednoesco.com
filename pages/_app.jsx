@@ -1,11 +1,15 @@
 import AppContainer from '../components/AppContainer';
 
+import ErrorBoundary from '../providers/ErrorBoundary';
+
 import 'tailwindcss/tailwind.css';
 
 const Slingercode = ({ Component, pageProps }) => (
-  <AppContainer>
-    <Component {...pageProps} />
-  </AppContainer>
+  <ErrorBoundary>
+    <AppContainer>
+      <Component {...pageProps} />
+    </AppContainer>
+  </ErrorBoundary>
 );
 
 export default Slingercode;
