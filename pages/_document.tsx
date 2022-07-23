@@ -14,7 +14,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dj4s8gwk9/image/upload/v1632076385/slingercode/Z8rquQhVA85n_hwxwkl.png"
+          content="https://res.cloudinary.com/dj4s8gwk9/image/upload/v1658541301/slingercode/og_dfynin"
         />
       </Head>
 
