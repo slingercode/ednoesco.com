@@ -4,7 +4,7 @@ export default function Index() {
   return (
     <>
       <div className="text-center md:text-left">
-        <H1>Noel Espino (a.k.a) slingercode</H1>
+        <H1>Noel Espino Córdova</H1>
 
         <br />
 
@@ -20,7 +20,7 @@ export default function Index() {
       <br />
 
       <Text>
-        Welcome to my digital <span className="font-semibold">(healthy)</span>{" "}
+        Welcome to my <span className="font-semibold">healthy</span> digital
         fingerprint on the wide internet  😁
       </Text>
 
@@ -29,7 +29,7 @@ export default function Index() {
 
       <Text>
         {`I'm a react developer located in Mexico focused on the performance of
-        the web and a passionate learner in that matter`}
+        the web and a passionate learner in that matter.`}
       </Text>
 
       <Text>
@@ -51,15 +51,8 @@ export default function Index() {
 
       <ul className="list-disc list-inside">
         <li>
-          <Link href="mailto:slingercode@omg.lol">slingercode@omg.lol</Link>
+          <Link href="mailto:hi@ednoesco.com">hi@ednoesco.com</Link>
           <span>{` (personal)`}</span>
-        </li>
-
-        <li>
-          <Link href="mailto:noelespinocordova@pm.me">
-            noelespinocordova@pm.me
-          </Link>
-          <span>{` (work-ish things?)`}</span>
         </li>
 
         <li>
@@ -78,6 +71,8 @@ export default function Index() {
 
       <ul className="list-decimal list-inside">
         <li className="font-bold underline">{`Privacy is not optional, it's an obligation`}</li>
+
+        <li>Dark mode is the only way</li>
 
         <li>Cyberpunk 2077 was not a good game</li>
       </ul>

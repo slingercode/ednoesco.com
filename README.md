@@ -1,5 +1,5 @@
-slingercode
+ednoesco
 
 <hr />
 
-[WIKI & instructions for slingercode.omg.lol](https://github.com/slingercode/slingercode/wiki)
+[WIKI & instructions for ednoesco.com](https://github.com/slingercode/slingercode/wiki)
