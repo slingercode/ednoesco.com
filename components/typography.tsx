@@ -1,5 +1,3 @@
-import NextLink from "../node_modules/next/link";
-
 type Props = {
   children: React.ReactNode;
   className?: string;

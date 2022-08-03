@@ -1,12 +1,12 @@
 {
-  "name": "slingercode",
+  "name": "ednoesco",
   "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "description": "My personal website",
   "author": {
-    "name": "Noel Espino",
-    "url": "https://slingercode.omg.lol",
+    "name": "Noel Espino Córdova",
+    "url": "https://ednoesco.com",
     "email": "slingercode@omg.lol"
   },
   "repository": {
@@ -17,8 +17,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "env:pull": "vercel env pull .env.local"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "12.2.2",

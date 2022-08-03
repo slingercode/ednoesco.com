@@ -1,13 +1,14 @@
-import { Text } from "../components/typography";
-import Head from "../node_modules/next/head";
+import { AppProps } from "next/app";
+import Head from "next/head";
 
+import { Text } from "../components/typography";
 import "../styles/global.css";
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>slingercode</title>
+        <title>Noel Espino Córdova</title>
       </Head>
 
       <main className="px-5 md:px-10 py-5">
