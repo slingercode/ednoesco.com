@@ -1,5 +1,5 @@
 {
-  "name": "ednoesco",
+  "name": "ednoesco.com",
   "version": "0.2.0",
   "private": true,
   "license": "MIT",
@@ -7,11 +7,11 @@
   "author": {
     "name": "Noel Espino Córdova",
     "url": "https://ednoesco.com",
-    "email": "slingercode@omg.lol"
+    "email": "hi@ednoesco.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/slingercode/slingercode"
+    "url": "https://github.com/slingercode/ednoesco.com"
   },
   "scripts": {
     "dev": "next dev",
