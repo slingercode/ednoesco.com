@@ -16,9 +16,6 @@ function App({ Component, pageProps }: AppProps) {
       </main>
 
       <footer className="mt-10 mb-5 flex flex-col justify-center items-center text-yellow-high">
-        <Text className="text-xs font-mono">
-          07AB 633F B4CF D35D 4468 4895 0345 F1CA 0F3A D813
-        </Text>
         <Text className="text-sm">{`MIT License; @_slingercode`}</Text>
       </footer>
     </>
