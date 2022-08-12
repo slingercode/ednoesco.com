@@ -5,7 +5,7 @@ export default function Pgp() {
     <>
       <div className="flex justify-center">
         <Text className="text-xs font-mono text-yellow-high">
-          1A3F A8DA 6860 6813 21E0 FED6 A112 5D87 8050 403B
+          768A BB25 03BF 390C 28C6 0E2C 28CE AA1B 6770 4969
         </Text>
       </div>
     </>
