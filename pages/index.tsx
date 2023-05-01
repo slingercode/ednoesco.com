@@ -9,9 +9,9 @@ export default function Index() {
         <br />
 
         <H3>
-          React Developer at{" "}
+          React Developer at
           <span>
-            <Link href="https://twitter.com/grainchainio">@GrainChainIO</Link>
+            <Link href="https://twitter.com/webdoxclm"> @webdoxclm</Link>
           </span>
         </H3>
       </div>
@@ -21,7 +21,7 @@ export default function Index() {
 
       <Text>
         Welcome to my <span className="font-semibold">healthy</span> digital
-        fingerprint on the wide internet  😁
+        fingerprint on the wide internet 😁
       </Text>
 
       <br />
