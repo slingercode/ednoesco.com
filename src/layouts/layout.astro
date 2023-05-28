@@ -1,5 +1,6 @@
 ---
 import "../global.css";
+import Footer from "../components/footer.astro";
 
 export type Props = {
   title: string;
@@ -13,9 +14,9 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
@@ -24,5 +25,7 @@ const { title, description } = Astro.props;
 
   <body class="text-ednoesco-primary bg-ednoesco-background">
     <slot />
+
+    <Footer />
   </body>
 </html>

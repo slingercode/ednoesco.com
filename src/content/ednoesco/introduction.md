@@ -9,9 +9,9 @@ I've worked mainly in React but I'm a trully beliver in technologies such as Nex
 
 ### Contact
 
-- hi@ednoesco.com (personal)
 - [github](https://github.com/slingercode)
 - [twitter](https://twitter.com/_slingercode)
+- hi@ednoesco.com
 
 ### Beliefs
 

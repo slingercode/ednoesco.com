@@ -18,6 +18,14 @@
 }
 
 @font-face {
+  font-family: "SatoshiMedium";
+  src: url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "SatoshiBlack";
   src: url("/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
   font-weight: 800;
@@ -34,15 +42,31 @@
 }
 
 @layer base {
+  .markdown h1 {
+    @apply mb-10 !important;
+  }
+
+  .markdown h2,
+  h3 {
+    @apply mb-5 !important;
+  }
+
   .markdown h1,
   h2,
-  h3,
-  p,
-  a,
+  h3 {
+    @apply font-medium;
+    font-family: "SatoshiMedium";
+  }
+
+  .markdown a,
   ul,
   ol,
   pre {
-    @apply mb-10 !important;
+    @apply mb-8 !important;
+  }
+
+  .markdown p {
+    @apply mb-5 !important;
   }
 
   .markdown h1 {
@@ -59,9 +83,9 @@
     @apply text-xl;
   }
 
-  .markdown p strong {
-    font-family: "SatoshiBlack";
+  .markdown strong {
     @apply font-extrabold;
+    font-family: "SatoshiBlack";
   }
 
   .markdown a {
@@ -86,11 +110,6 @@
   .markdown ol {
     @apply list-decimal;
   }
-
-  /* TODO! Find a way to change the checked color */
-  /* .markdown input:checked {
-    @apply bg-red-100 !important;
-  } */
 
   .markdown blockquote {
     @apply border-l-4;
