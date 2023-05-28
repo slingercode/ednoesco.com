@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/layout.astro";
+import Markdown from "../components/markdown.astro";
+import { Content as IntroductionContent } from "../content/introduction.md";
+---
+
+<Layout title="ednoesco" description="Main page">
+  <main>
+    <Markdown>
+      <IntroductionContent />
+    </Markdown>
+  </main>
+</Layout>

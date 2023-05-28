@@ -1,0 +1,126 @@
+@tailwind base;
+
+:root {
+  --accent-high: hsl(53, 100%, 91%);
+  --accent-low: hsl(48, 100%, 47%);
+  --accent-border: hsl(53, 100%, 86%);
+  --primary: hsl(256, 6%, 93.2%);
+  --background: hsl(246, 6%, 9%);
+  --secondary-background: hsl(240, 5.1%, 11.6%);
+}
+
+@font-face {
+  font-family: "SatoshiRegular";
+  src: url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiBlack";
+  src: url("/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BerkeleyMono";
+  src: url("/fonts/Berkeley/Berkeley-Mono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  .markdown h1,
+  h2,
+  h3,
+  p,
+  a,
+  ul,
+  ol,
+  pre {
+    @apply mb-10 !important;
+  }
+
+  .markdown h1 {
+    @apply pb-3;
+    @apply border-b;
+    @apply text-5xl;
+  }
+
+  .markdown h2 {
+    @apply text-3xl;
+  }
+
+  .markdown h3 {
+    @apply text-xl;
+  }
+
+  .markdown p strong {
+    font-family: "SatoshiBlack";
+    @apply font-extrabold;
+  }
+
+  .markdown a {
+    @apply font-mono;
+    @apply text-ednoesco-accent-high;
+  }
+
+  .markdown a:hover {
+    @apply underline;
+    @apply text-ednoesco-accent-low;
+  }
+
+  .markdown ul,
+  ol {
+    @apply list-inside !important;
+  }
+
+  .markdown ul:not(.contains-task-list) {
+    @apply list-disc;
+  }
+
+  .markdown ol {
+    @apply list-decimal;
+  }
+
+  /* TODO! Find a way to change the checked color */
+  /* .markdown input:checked {
+    @apply bg-red-100 !important;
+  } */
+
+  .markdown blockquote {
+    @apply border-l-4;
+    @apply text-ednoesco-accent-high;
+    @apply border-ednoesco-accent-high;
+    @apply bg-ednoesco-secondary-background;
+  }
+
+  .markdown blockquote p {
+    @apply p-2;
+    @apply italic;
+    @apply text-sm;
+    @apply font-mono;
+  }
+
+  .markdown code {
+    @apply text-sm;
+  }
+
+  .markdown p code {
+    @apply px-2;
+    @apply py-px;
+    @apply rounded-sm;
+    @apply bg-ednoesco-secondary-background;
+  }
+
+  .markdown pre {
+    @apply py-2;
+    @apply px-3;
+    @apply rounded-sm;
+    @apply bg-ednoesco-secondary-background !important;
+  }
+}
