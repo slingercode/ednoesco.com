@@ -22,7 +22,7 @@ I've worked mainly in React but I'm a trully beliver in technologies such as Nex
 ### Interests / Learning
 
 - Javascript vanilla (I need that practical part)
-- How dows a JS engine works? 🤔... I've think about that sinze Bun.sh came out
+- How does a JS engine works? 🤔... I've think about that sinze Bun.sh came out
 - Learn a low level programming language, I would like Rust tho
 - DevOps workflow and cloud, I'm a newbie but I already started with my sample projects 😄🫣
 
