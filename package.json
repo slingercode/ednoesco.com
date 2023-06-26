@@ -1,6 +1,6 @@
 {
   "name": "ednoesco.com",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -22,13 +22,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^3.1.3",
-    "astro": "^2.5.5",
-    "tailwindcss": "^3.0.24"
+    "@astrojs/tailwind": "^4.0.0",
+    "astro": "^2.7.0",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.9.1",
+    "prettier-plugin-astro": "^0.10.0",
     "prettier-plugin-tailwindcss": "^0.3.0"
   }
 }
