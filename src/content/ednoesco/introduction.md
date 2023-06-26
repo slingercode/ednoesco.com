@@ -2,10 +2,14 @@
 
 ### React Developer at [@webdoxclm](https://twitter.com/webdoxclm)
 
-**Hello! Welcome to my healthy digital fingerprint on the wide internet 😁**
+<br>
 
-I'm a react developer located in Mexico focused on the performance of the web and a passionate learner in that matter.
-I've worked mainly in React but I'm a truly believer in technologies such as Next.js, Remix and Astro ❤️
+> Hello and welcome to my **healthy** digital fingerprint on internet
+
+<br>
+
+My name is Noel and I'm a react developer located in Mexico focused on the performance of the web and a passionate learner in that matter.
+I've worked mainly in React but I'm a truly believer in technologies such as Next.js, Remix and Astro
 
 ### Contact
 
@@ -22,8 +26,8 @@ I've worked mainly in React but I'm a truly believer in technologies such as Nex
 ### Interests / Learning
 
 - Javascript vanilla (I need that practical part)
-- How does a JS engine works? 🤔... I've think about that since Bun.sh came out
+- How does a JS engine works? I've think about that since Bun.sh came out
 - Learn a low level programming language, I would like Rust tho
-- DevOps workflow and cloud, I'm a newbie but I already started with my sample projects 😄🫣
+- DevOps workflow and cloud. I'm a newbie but I already started with some sample projects
 
 Maybe someday I write about my learning on that topics (￣ ▽ ￣)ノ, who knows...
