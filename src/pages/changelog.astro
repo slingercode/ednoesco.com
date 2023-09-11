@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/layout.astro";
+import { Content as ChangelogContent } from "../content/changelog/changelog.md";
+import Markdown from "../components/markdown.astro";
+---
+
+<Layout title="Noel Espino" description="Changelog">
+  <main>
+    <Markdown>
+      <ChangelogContent />
+    </Markdown>
+  </main>
+</Layout>
