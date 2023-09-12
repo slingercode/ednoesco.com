@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.6.0
+
+<hr>
+
+- **Buuuuuuuuuuuuuuuuuuun!**
+
+<br>
+
 ## v0.5.1
 
 <hr>
