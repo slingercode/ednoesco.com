@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/layout.astro";
+import Link from "../components/common/link.astro";
+
+const blogEntries = await getCollection(
+  "blog",
+  ({ data: { draft } }) => !draft,
+);
+---
+
+<Layout title="blog" description="">
+  <main class="grid gap-5">
+    {
+      blogEntries.map(({ slug, data: { title } }) => (
+        <Link href={`/blog/${slug}`}>{title}</Link>
+      ))
+    }
+
+     WIP
+  </main>
+</Layout>
