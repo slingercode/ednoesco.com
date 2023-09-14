@@ -1,0 +1,12 @@
+---
+type Props = astroHTML.JSX.DefinedIntrinsicElements["a"];
+
+const { href, class: aClass } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`font-mono text-ednoesco-accent-high hover:text-ednoesco-accent-low hover:underline ${aClass}`}
+>
+  <slot />
+</a>

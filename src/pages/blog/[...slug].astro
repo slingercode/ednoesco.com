@@ -1,0 +1,42 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/layout.astro";
+import Markdown from "../../components/markdown.astro";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async () => {
+  const blogEntries = await getCollection(
+    "blog",
+    ({ data: { draft } }) => !draft,
+  );
+
+  return blogEntries.map((blog) => ({
+    params: { slug: blog.slug },
+    props: { blog },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = {
+  blog: CollectionEntry<"blog">;
+};
+
+const {
+  blog: {
+    render,
+    data: { title },
+  },
+} = Astro.props;
+const { Content } = await render();
+---
+
+<Layout title="blog" description="">
+  <h1 class="fontWeight-medium pb-2 text-center font-[SatoshiMedium] text-4xl">
+    {title}
+  </h1>
+
+  <hr class="pb-5" />
+
+  <Markdown>
+    <Content />
+  </Markdown>
+</Layout>
