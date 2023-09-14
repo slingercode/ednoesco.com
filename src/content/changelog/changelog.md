@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.1
+
+<hr>
+
+- Add `blogs` and `blog/[...slug]` routes
+- `Link` component
+- **(DEV)** Blogs collection defined
+
+<br>
+
 ## v0.6.0
 
 <hr>
