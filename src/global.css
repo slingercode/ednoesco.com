@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "SatoshiRegular";
-  src: url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
+  src: url("/static/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "SatoshiMedium";
-  src: url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
+  src: url("/static/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "SatoshiBlack";
-  src: url("/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
+  src: url("/static/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "BerkeleyMono";
-  src: url("/fonts/Berkeley/Berkeley-Mono.woff2") format("woff2");
+  src: url("/static/fonts/Berkeley/Berkeley-Mono.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
