@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.4
+
+<hr>
+
+- Update `Header` component to `Nav`
+- Add a `header` tag on blog titles
+- Update background color to black... let's see if it lasts
+
+<br>
+
 ## v0.6.3
 
 <hr>

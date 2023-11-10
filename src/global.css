@@ -3,8 +3,9 @@
   --accent-low: hsl(48, 100%, 47%);
   --accent-border: hsl(53, 100%, 86%);
   --primary: hsl(256, 6%, 93.2%);
-  --background: hsl(246, 6%, 9%);
-  --secondary-background: hsl(240, 5.1%, 11.6%);
+  --background: rgb(0, 0, 0);
+  --secondary-background: rgb(0, 0, 0);
+  --code-background: hsl(240, 5.1%, 11.6%);
 }
 
 @font-face {
