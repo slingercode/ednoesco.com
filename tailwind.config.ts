@@ -1,7 +1,10 @@
-const defaultFontFamily = require("tailwindcss/defaultTheme").fontFamily;
+import tailwindTypography from "@tailwindcss/typography";
+import { fontFamily as defaultFontFamily } from "tailwindcss/defaultTheme";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+import type { PluginUtils } from "tailwindcss/types/config";
+
+export default {
   content: ["./src/**/*.{astro,html,md,tsx}"],
   theme: {
     extend: {
@@ -28,7 +31,7 @@ module.exports = {
        * - [Tailwind default theme](https://raw.githubusercontent.com/tailwindlabs/tailwindcss/master/stubs/config.full.js)
        * - [Tailwind typography theme definition](https://raw.githubusercontent.com/tailwindlabs/tailwindcss-typography/master/src/styles.js)
        */
-      typography: ({ theme }) => ({
+      typography: ({ theme }: PluginUtils) => ({
         DEFAULT: {
           css: {
             h1: {
@@ -63,6 +66,7 @@ module.exports = {
             },
             p: {
               margin: theme("spacing.0"),
+              paddingBottom: theme("spacing.5"),
               lineHeight: theme("lineHeight.relaxed"),
             },
             strong: {
@@ -80,10 +84,20 @@ module.exports = {
               fontFamily: "BerkeleyMono",
               fontSize: theme("fontSize.sm"),
               paddingLeft: theme("spacing.4"),
+              paddingRight: theme("spacing.4"),
               paddingTop: theme("spacing.2"),
               borderRadius: theme("borderRadius.DEFAULT"),
               paddingBottom: theme("spacing.2"),
               backgroundColor: theme("colors.ednoesco.secondary-background"),
+            },
+            "blockquote p": {
+              paddingBottom: theme("spacing.0"),
+            },
+            "blockquote p:first-of-type::before": {
+              content: "",
+            },
+            "blockquote p:last-of-type::after": {
+              content: "",
             },
             ul: {
               marginTop: theme("spacing.2"),
@@ -98,12 +112,26 @@ module.exports = {
               listStylePosition: "inside",
             },
             li: {
-              listStylePosition: "inside",
               marginTop: theme("spacing.0"),
               marginBottom: theme("spacing.0"),
+              "&::marker": {
+                fontFamily: "BerkeleyMono",
+              },
+            },
+            "ol > li": {
+              paddingLeft: theme("spacing.2"),
+            },
+            "ul > li": {
+              paddingLeft: theme("spacing.2"),
+            },
+            "> ul > li > *:first-child": {
+              marginTop: theme("spacing.5"),
             },
             "> ul > li > *:last-child": {
               marginBottom: theme("spacing.5"),
+            },
+            "> ol > li > *:first-child": {
+              marginTop: theme("spacing.5"),
             },
             "> ol > li > *:last-child": {
               marginBottom: theme("spacing.5"),
@@ -145,9 +173,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    require("@tailwindcss/typography")({
-      className: "markdown",
-    }),
-  ],
-};
+  plugins: [tailwindTypography({ className: "markdown" })],
+} satisfies Config;
