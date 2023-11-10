@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.2
+
+<hr>
+
+- Update `Astro` to `v3.5.0`
+- Add [`ViewTransitions`](https://developer.chrome.com/docs/web-platform/view-transitions/) and [`Prefetch`](https://developer.mozilla.org/en-US/docs/Glossary/Prefetch) APIs
+- **(DEV)** Blog entry: [Crafting an interpreter](/blog/crafting-an-interpreter)
+
+<br>
+
 ## v0.6.1
 
 <hr>

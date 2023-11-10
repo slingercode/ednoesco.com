@@ -91,6 +91,12 @@ module.exports = {
               paddingLeft: theme("spacing.0"),
               listStylePosition: "inside",
             },
+            ol: {
+              marginTop: theme("spacing.2"),
+              marginBottom: theme("spacing.5"),
+              paddingLeft: theme("spacing.0"),
+              listStylePosition: "inside",
+            },
             li: {
               listStylePosition: "inside",
               marginTop: theme("spacing.0"),
