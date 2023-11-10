@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.3
+
+<hr>
+
+- Tailwind config using ESM
+- Use `BerkeleyMono` font in `li` markers
+- Add padding to `p` elements in markdown
+
+<br>
+
 ## v0.6.2
 
 <hr>

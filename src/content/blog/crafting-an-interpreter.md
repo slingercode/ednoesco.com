@@ -14,7 +14,8 @@ Just because I wanted to retake the book I planned to rewrite some parts in orde
 
 So with that background let's start with a couple of topics (in order) about the development process of the interpreter:
 
-1. Read a file and parse all the content in a single string. 2. The goal of the project is to run a file or an interpreter on the console
+1. Read a file and parse all the content in a single string.
+   The goal of the project is to run a file or an interpreter on the console
 2. Create a `Scanner` instance and start the process `scan_tokens`
 3. Get the current `char` and match with the available `Tokens`
 
@@ -36,6 +37,7 @@ fn advance(&mut self) {
 A quick overview is, the `get_current_char` function retrieves the char in the current position in the source code string and if is not a valid char (`EOF`) return a empty char. The `advance` function increments the current position but I'm also using a custom variable called `line_block` that represents the position in the editor, for example, the first char in the line is always 1 so i would read line 1 at position 1, if that makes sense.
 
 Now, what would do with the match character process?, well, I've created some handler functions that serves that purpose. There are a couple of functions but I don't want to explain all of them so I'm going to pick the basic function for single token scanning, this means for tokens that doesn't depend on a sequence, for example the `}` char only indicates a right brace.
+
 **Note: remember that currently we are in a lexical analysis not semantical, so we need to identify only the tokens**
 
 Example of the handler function for a single token:
