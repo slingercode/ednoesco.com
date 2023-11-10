@@ -1,12 +1,15 @@
 ---
-type Props = astroHTML.JSX.DefinedIntrinsicElements["a"];
+type Props = astroHTML.JSX.DefinedIntrinsicElements["a"] & {
+  dataAstroPrefetch?: "hover" | "tap" | "viewport" | "false";
+};
 
-const { href, class: aClass } = Astro.props;
+const { href, class: aClass, dataAstroPrefetch = "viewport" } = Astro.props;
 ---
 
 <a
   href={href}
   class={`font-mono text-ednoesco-accent-high hover:text-ednoesco-accent-low hover:underline ${aClass}`}
+  data-astro-prefetch={dataAstroPrefetch}
 >
   <slot />
 </a>
