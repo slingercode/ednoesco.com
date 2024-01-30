@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.5
+
+<hr>
+
+- Update `Astro` to `v4.3.2`
+- Update `Tailwind` to `v3.4.1`
+- Dev dependencies updated
+
+<br>
+
 ## v0.6.4
 
 <hr>

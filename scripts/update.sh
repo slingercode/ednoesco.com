@@ -1,0 +1,1 @@
+npm i @astrojs/tailwind@latest @tailwindcss/typography@latest astro@latest tailwindcss@latest
