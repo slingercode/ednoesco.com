@@ -1,6 +1,6 @@
 {
   "name": "ednoesco.com",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "private": true,
   "license": "MIT",
   "description": "My personal website",
@@ -21,14 +21,14 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.0.2",
+    "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^3.5.0",
-    "tailwindcss": "^3.3.3"
+    "astro": "^4.3.2",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.1",
-    "prettier-plugin-tailwindcss": "^0.5.4"
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.11"
   }
 }
