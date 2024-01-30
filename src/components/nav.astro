@@ -2,9 +2,9 @@
 import Link from "./common/link.astro";
 import type { Props as LinkProps } from "./common/link.astro";
 
-type Route = Pick<LinkProps, 'href'> & {
+type Route = Pick<LinkProps, "href"> & {
   text: string;
-}
+};
 
 const routes: Route[] = [
   { href: "/", text: "ednoesco" },

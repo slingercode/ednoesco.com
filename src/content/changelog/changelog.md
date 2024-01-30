@@ -4,7 +4,7 @@
 
 <hr>
 
-- Update `Astro` to `v4.2`
+- Update `Astro` to `v4.3.2`
 - Update `Tailwind` to `v3.4.1`
 - Dev dependencies updated
 
