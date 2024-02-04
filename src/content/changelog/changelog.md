@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.6
+
+<hr>
+
+- Add `Image` component to blogs entries
+- Allow all blogs to appear in `DEV` environment
+
+<br>
+
 ## v0.6.5
 
 <hr>

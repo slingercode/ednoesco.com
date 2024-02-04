@@ -40,6 +40,9 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     paddingBottom: theme("spacing.5"),
     lineHeight: theme("lineHeight.relaxed"),
   },
+  img: {
+    borderRadius: theme("borderRadius.DEFAULT"),
+  },
   strong: {
     fontFamily: "var(--satoshi-black)",
     fontWeight: theme("fontWeight.medium"),

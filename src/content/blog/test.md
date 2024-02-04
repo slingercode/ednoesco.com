@@ -1,6 +1,9 @@
 ---
 title: "(TEST) Artificial Intelligence for Beginners - A Curriculum"
 date: "01/01/2023"
+image: "/images/test.png"
+height: 1749
+width: 2481
 draft: true
 ---
 
