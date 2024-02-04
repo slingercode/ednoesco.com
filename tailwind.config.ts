@@ -6,31 +6,31 @@ import type { PluginUtils } from "tailwindcss/types/config";
 
 const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
   h1: {
-    fontFamily: "SatoshiMedium",
+    fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.10"),
   },
   h2: {
-    fontFamily: "SatoshiMedium",
+    fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
   },
   h3: {
-    fontFamily: "SatoshiMedium",
+    fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
   },
   h4: {
-    fontFamily: "SatoshiMedium",
+    fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
   },
   a: {
-    fontFamily: "BerkeleyMono",
+    fontFamily: "var(--berkeley-mono)",
     "&:hover": {
       color: theme("colors.ednoesco.accent.low"),
     },
@@ -41,7 +41,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     lineHeight: theme("lineHeight.relaxed"),
   },
   strong: {
-    fontFamily: "SatoshiBlack",
+    fontFamily: "var(--satoshi-black)",
     fontWeight: theme("fontWeight.medium"),
   },
   hr: {
@@ -52,7 +52,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     quotes: "none",
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
-    fontFamily: "BerkeleyMono",
+    fontFamily: "var(--berkeley-mono)",
     fontSize: theme("fontSize.sm"),
     paddingLeft: theme("spacing.4"),
     paddingRight: theme("spacing.4"),
@@ -86,7 +86,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     marginTop: theme("spacing.0"),
     marginBottom: theme("spacing.0"),
     "&::marker": {
-      fontFamily: "BerkeleyMono",
+      fontFamily: "var(--berkeley-mono)",
     },
   },
   "ol > li": {
@@ -157,8 +157,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["SatoshiRegular", ...defaultFontFamily.sans],
-        mono: ["BerkeleyMono", ...defaultFontFamily.mono],
+        medium: ["var(--satoshi-medium)"],
+        sans: ["var(--satoshi-regular)", ...defaultFontFamily.sans],
+        mono: ["var(--berkeley-mono)", ...defaultFontFamily.mono],
       },
       /**
        * This is the definition for the styling on `Markdown` content
