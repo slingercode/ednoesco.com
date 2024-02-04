@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.7
+
+<hr>
+
+- Refactor function `makeRelativeFontPath` and move it into a new `utils` folder
+- Delete `common` folder in components and move `Link` component
+- Now the links in `/blogs` are `text-ednoesco-primary` color
+
+<br>
+
 ## v0.6.6
 
 <hr>

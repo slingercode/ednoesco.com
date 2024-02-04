@@ -1,11 +1,12 @@
 ---
-import { join } from "node:path";
 import { AstroFont } from "astro-font";
 import { ViewTransitions, fade } from "astro:transitions";
 
-import "../global.css";
 import Nav from "../components/nav.astro";
 import Footer from "../components/footer.astro";
+import { makeRelativeFontPath } from "../utils";
+
+import "../global.css";
 
 export type Props = {
   title: string;
@@ -18,9 +19,6 @@ Astro.response.headers.set(
   "cache-control",
   "public, max-age=14400, must-revalidate",
 );
-
-const makeFontPath = (folderName: string, fontName: string) =>
-  join(process.cwd(), "public", "static", "fonts", folderName, fontName);
 ---
 
 <!doctype html>
@@ -36,6 +34,7 @@ const makeFontPath = (folderName: string, fontName: string) =>
     <title>{title}</title>
 
     <ViewTransitions />
+
     <AstroFont
       config={[
         {
@@ -44,7 +43,7 @@ const makeFontPath = (folderName: string, fontName: string) =>
             {
               style: "normal",
               weight: "normal",
-              path: makeFontPath("Satoshi", "Satoshi-Regular.woff2"),
+              path: makeRelativeFontPath("Satoshi", "Satoshi-Regular.woff2"),
             },
           ],
           preload: true,
@@ -58,7 +57,7 @@ const makeFontPath = (folderName: string, fontName: string) =>
             {
               weight: "500",
               style: "normal",
-              path: makeFontPath("Satoshi", "Satoshi-Medium.woff2"),
+              path: makeRelativeFontPath("Satoshi", "Satoshi-Medium.woff2"),
             },
           ],
           preload: true,
@@ -72,7 +71,7 @@ const makeFontPath = (folderName: string, fontName: string) =>
             {
               weight: "800",
               style: "normal",
-              path: makeFontPath("Satoshi", "Satoshi-Black.woff2"),
+              path: makeRelativeFontPath("Satoshi", "Satoshi-Black.woff2"),
             },
           ],
           preload: true,
@@ -86,7 +85,7 @@ const makeFontPath = (folderName: string, fontName: string) =>
             {
               style: "normal",
               weight: "normal",
-              path: makeFontPath("Berkeley", "Berkeley-Mono.woff2"),
+              path: makeRelativeFontPath("Berkeley", "Berkeley-Mono.woff2"),
             },
           ],
           preload: true,
