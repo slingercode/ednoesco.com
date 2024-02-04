@@ -1,7 +1,7 @@
 ---
 title: "Crafting an interpreter"
 date: "07/11/2023"
-image: "/images/crafting-interpreters.png"
+cover: "../images/crafting-interpreters.png"
 height: 900
 width: 1920
 draft: false

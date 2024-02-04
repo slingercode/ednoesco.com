@@ -26,7 +26,7 @@ type Props = {
 const {
   blog: {
     render,
-    data: { title, image, height = 1200, width = 800, date },
+    data: { title, date, cover, height = 1200, width = 800 },
   },
 } = Astro.props;
 
@@ -42,9 +42,9 @@ const { Content } = await render();
     <p class="text-sm">{date}</p>
 
     {
-      image !== undefined && (
+      cover !== undefined && (
         <Image
-          src={image}
+          src={cover}
           alt={title}
           height={height}
           width={width}

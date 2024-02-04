@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.6.8
+
+<hr>
+
+- Move local images from blogs into `src` directory. [ref](https://docs.astro.build/en/guides/images/#images-in-content-collections)
+
+<br>
+
 ## v0.6.7
 
 <hr>
