@@ -1,13 +1,16 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/layout.astro";
 import Markdown from "../../components/markdown.astro";
+
+import type { CollectionEntry } from "astro:content";
 import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths = (async () => {
   const blogEntries = await getCollection(
     "blog",
-    ({ data: { draft } }) => !draft,
+    ({ data: { draft } }) => import.meta.env.DEV === true || !draft,
   );
 
   return blogEntries.map((blog) => ({
@@ -23,17 +26,32 @@ type Props = {
 const {
   blog: {
     render,
-    data: { title },
+    data: { title, image, height = 1200, width = 800, date },
   },
 } = Astro.props;
+
 const { Content } = await render();
 ---
 
 <Layout title="blog" description="">
   <header class="pb-2 font-medium text-3xl md:text-4xl">
-    <h1>
+    <h1 class="pb-4">
       {title}
     </h1>
+
+    <p class="text-sm">{date}</p>
+
+    {
+      image !== undefined && (
+        <Image
+          src={image}
+          alt={title}
+          height={height}
+          width={width}
+          class="my-2 rounded-sm"
+        />
+      )
+    }
   </header>
 
   <hr class="pb-5" />

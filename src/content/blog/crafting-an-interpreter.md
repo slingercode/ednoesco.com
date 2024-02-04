@@ -1,12 +1,15 @@
 ---
 title: "Crafting an interpreter"
 date: "07/11/2023"
+image: "/images/crafting-interpreters.png"
+height: 900
+width: 1920
 draft: false
 ---
 
 > **THIS WRITING IS WIP. SORRY FOR TYPOS AND THAT KIND OF STUFF**
 
-> This document is going to be a collection of personal notes about interpreters, compilers and some reflections on the code that is being implemented in this [repo](https://github.com/slingercode/rlox)
+> This post is going to be a collection of personal notes about interpreters, compilers and some reflections on the code that is being implemented in this [repo](https://github.com/slingercode/rlox)
 
 Last year I started reading the book called [Crafting Interpreters](https://craftinginterpreters.com) and just a couple of days retake this project. After all this months I forgot about some topics and started to rewrite the code (with improvements) and creating this notes as a documentation in which i can refer if I forgot the development.
 
@@ -49,4 +52,4 @@ fn handle_single_token_scan(&mut self, token_type: TokenType) {
 }
 ```
 
-The reason for me to explain this kind of functions in my code it's the use of the `advance` function. Sure, the function creates a token but I can discus that later but the goal is the advance function. I'm calling that function because I'm retrieving the current char and after the match char statement finishes the next char is required, so maybe there is a unique advance conditional that could happen when creating a new token. In this point I'm creating single tokens (`+`, `*`) and also _"multiple"_ tokens (`=` or `==`) but the comment or the identifiers need an special advance condition.
+The reason for me to explain this kind of functions in my code it's the use of the `advance` function. Sure, the function creates a token (I can discus that later) but the goal is the `advance` function. I'm calling that function because I'm retrieving the current char and after the match char statement finishes the next char is required, so maybe there is a unique advance conditional that could happen when creating a new token. In this point I'm creating single tokens (`+`, `*`) and also _"multiple"_ tokens (`=` or `==`) but the comment or the identifiers need an special advance condition.
