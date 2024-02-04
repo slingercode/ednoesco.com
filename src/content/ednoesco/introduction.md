@@ -2,14 +2,8 @@
 
 ### React Developer at [@webdoxclm](https://twitter.com/webdoxclm)
 
-> Hello and welcome to my **healthy** digital fingerprint on internet
-
-<br>
-
 My name is Noel and I'm a react developer located in Mexico focused on the performance of the web and a passionate learner in that matter.
 I've worked mainly in React but I'm a truly believer in technologies such as Next.js, Remix and Astro
-
-<br>
 
 ### Contact
 

@@ -1,6 +1,6 @@
 {
   "name": "ednoesco.com",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "private": true,
   "license": "MIT",
   "description": "My personal website",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "astro": "astro",
-    "dev": "astro dev --port 8080",
+    "dev": "astro dev --port 3000",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
