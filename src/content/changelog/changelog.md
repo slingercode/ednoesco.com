@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.6.9
+
+<hr>
+
+- Use `pnpm`
+
+<br>
+
 ## v0.6.8
 
 <hr>
