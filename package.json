@@ -1,6 +1,6 @@
 {
   "name": "ednoesco.com",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "private": true,
   "license": "MIT",
   "description": "My personal website",
@@ -25,6 +25,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^4.3.2",
     "astro-font": "^0.0.77",
+    "sharp": "^0.33.2",
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {

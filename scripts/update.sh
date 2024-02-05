@@ -1,1 +1,7 @@
-npm i @astrojs/tailwind@latest @tailwindcss/typography@latest astro@latest tailwindcss@latest
+pnpm i \
+  @astrojs/tailwind@latest \
+  @tailwindcss/typography@latest \
+  astro@latest \
+  astro-font@latest \
+  sharp@latest \
+  tailwindcss@latest \
