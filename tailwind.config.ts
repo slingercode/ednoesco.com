@@ -10,27 +10,32 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.10"),
+    fontSize: theme("fontSize.xl"),
   },
   h2: {
     fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
+    fontSize: theme("fontSize.lg"),
   },
   h3: {
     fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
+    fontSize: theme("fontSize.md"),
   },
   h4: {
     fontFamily: "var(--satoshi-medium)",
     fontWeight: theme("fontWeight.medium"),
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
+    fontSize: theme("fontSize.base"),
   },
   a: {
     fontFamily: "var(--berkeley-mono)",
+    fontSize: theme("fontSize.base"),
     "&:hover": {
       color: theme("colors.ednoesco.accent.low"),
     },
@@ -39,6 +44,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     margin: theme("spacing.0"),
     paddingBottom: theme("spacing.5"),
     lineHeight: theme("lineHeight.relaxed"),
+    fontSize: theme("fontSize.base"),
   },
   img: {
     borderRadius: theme("borderRadius.DEFAULT"),
@@ -46,6 +52,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
   strong: {
     fontFamily: "var(--satoshi-black)",
     fontWeight: theme("fontWeight.medium"),
+    fontSize: theme("fontSize.base"),
   },
   hr: {
     marginTop: theme("spacing.2"),
@@ -56,7 +63,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
     fontFamily: "var(--berkeley-mono)",
-    fontSize: theme("fontSize.sm"),
+    fontSize: theme("fontSize.base"),
     paddingLeft: theme("spacing.4"),
     paddingRight: theme("spacing.4"),
     paddingTop: theme("spacing.0"),
@@ -66,6 +73,7 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
   },
   "blockquote p": {
     paddingBottom: theme("spacing.0"),
+    fontSize: theme("fontSize.base"),
   },
   "blockquote p:first-of-type::before": {
     content: "",
@@ -78,16 +86,19 @@ const defaultTypographyModifiers = (theme: PluginUtils["theme"]) => ({
     marginBottom: theme("spacing.5"),
     paddingLeft: theme("spacing.0"),
     listStylePosition: "inside",
+    fontSize: theme("fontSize.base"),
   },
   ol: {
     marginTop: theme("spacing.2"),
     marginBottom: theme("spacing.5"),
     paddingLeft: theme("spacing.0"),
     listStylePosition: "inside",
+    fontSize: theme("fontSize.base"),
   },
   li: {
     marginTop: theme("spacing.0"),
     marginBottom: theme("spacing.0"),
+    fontSize: theme("fontSize.base"),
     "&::marker": {
       fontFamily: "var(--berkeley-mono)",
     },
@@ -158,6 +169,16 @@ export default {
           "secondary-background": "var(--secondary-background)",
           "code-background": "var(--code-background)",
         },
+      },
+      fontSize: {
+        xs: "var(--font-size-xs)",
+        sm: "var(--font-size-sm)",
+        base: "var(--font-size-base)",
+        md: "var(--font-size-md)",
+        lg: "var(--font-size-lg)",
+        xl: "var(--font-size-xl)",
+        "2xl": "var(--font-size-xxl)",
+        "3xl": "var(--font-size-xxxl)",
       },
       fontFamily: {
         medium: ["var(--satoshi-medium)"],
