@@ -1,8 +1,5 @@
 ---
-import Link from "./link.astro";
-import type { Props as LinkProps } from "./link.astro";
-
-type Route = Pick<LinkProps, "href"> & {
+type Route = Pick<astroHTML.JSX.AnchorHTMLAttributes, "href"> & {
   text: string;
 };
 
@@ -13,12 +10,17 @@ const routes: Route[] = [
 ];
 ---
 
-<nav class="mb-10 flex justify-end py-2">
-  {
-    routes.map(({ href, text }) => (
-      <Link href={href} class="pl-5">
-        {text}
-      </Link>
-    ))
-  }
+<nav>
+  {routes.map(({ href, text }) => <a href={href}>{text}</a>)}
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav > a {
+    padding-left: 10px;
+  }
+</style>
