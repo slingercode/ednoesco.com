@@ -1,15 +1,62 @@
+@font-face {
+  font-family: "SatoshiRegular";
+  src: url("/static/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiMedium";
+  src: url("/static/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiBlack";
+  src: url("/static/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BerkeleyMono";
+  src: url("/static/fonts/Berkeley/Berkeley-Mono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Theme */
-  --accent-high: hsl(53, 100%, 91%);
-  --accent-low: hsl(48, 100%, 47%);
-  --accent-border: hsl(53, 100%, 86%);
-  --primary: hsl(256, 6%, 93.2%);
-  --background: rgb(0, 0, 0);
-  --secondary-background: rgb(0, 0, 0);
-  --code-background: hsl(240, 5.1%, 11.6%);
+  --border-primary: hsl(53, 100%, 86%);
+  --text-primary: hsl(256, 6%, 93.2%);
+  --text-secondary: hsl(53, 100%, 91%);
+  --text-tertiary: hsl(48, 100%, 47%);
+  --bg-primary: rgb(0, 0, 0);
+  --bg-code: hsl(240, 5.1%, 11.6%);
 
   /* Spacing */
-  --spacing-2: 100px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --spacing-40: 10rem;
+  --spacing-48: 12rem;
+  --spacing-56: 14rem;
+  --spacing-64: 16rem;
 
   /* Font sizes */
   --font-size-xs: clamp(0.56rem, 0.01vw + 0.56rem, 0.56rem);
@@ -22,12 +69,115 @@
   --font-size-xxxl: clamp(2.67rem, 2.8vw + 1.97rem, 4.21rem);
 }
 
+/* Adjust spacing for small screens */
+@media (max-width: 600px) {
+  :root {
+    /* Spacing */
+    --spacing-1: 0.2rem;
+    --spacing-2: 0.4rem;
+    --spacing-3: 0.6rem;
+    --spacing-4: 0.8rem;
+    --spacing-5: 1rem;
+    --spacing-6: 1.2rem;
+    --spacing-8: 1.6rem;
+    --spacing-10: 2rem;
+    --spacing-12: 2.4rem;
+    --spacing-16: 3.2rem;
+    --spacing-20: 4rem;
+    --spacing-24: 4.8rem;
+    --spacing-32: 6.4rem;
+    --spacing-40: 8rem;
+    --spacing-48: 9.6rem;
+    --spacing-56: 11.2rem;
+    --spacing-64: 12.8rem;
+  }
+}
+
+/* Adjust spacing for medium screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+  :root {
+    /* Spacing */
+    --spacing-1: 0.3rem;
+    --spacing-2: 0.6rem;
+    --spacing-3: 0.9rem;
+    --spacing-4: 1.2rem;
+    --spacing-5: 1.5rem;
+    --spacing-6: 1.8rem;
+    --spacing-8: 2.4rem;
+    --spacing-10: 3rem;
+    --spacing-12: 3.6rem;
+    --spacing-16: 4.8rem;
+    --spacing-20: 6rem;
+    --spacing-24: 7.2rem;
+    --spacing-32: 9.6rem;
+    --spacing-40: 12rem;
+    --spacing-48: 14.4rem;
+    --spacing-56: 16.8rem;
+    --spacing-64: 19.2rem;
+  }
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* a {
-  color: red;
-} */
+* {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "SatoshiRegular", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: bold;
+  font-family: "SatoshiMedium", "SatoshiRegular", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: "BerkeleyMono", monospace;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: bold;
+  font-family: "SatoshiBlack", sans-serif;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: var(--spacing-8);
+}
+
+pre,
+code {
+  background-color: var(--bg-code);
+  font-family: "BerkeleyMono", monospace;
+}
+
+code {
+  border-radius: 5%;
+  padding: 2px 5px;
+}

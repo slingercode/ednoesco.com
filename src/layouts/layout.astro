@@ -27,8 +27,16 @@ const { title, description } = Astro.props;
   <body>
     <Nav />
 
-    <slot />
+    <main>
+      <slot />
+    </main>
 
     <Footer />
   </body>
 </html>
+
+<style>
+  main {
+    margin-top: var(--spacing-8);
+  }
+</style>
