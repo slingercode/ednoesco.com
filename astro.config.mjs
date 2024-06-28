@@ -10,4 +10,7 @@ export default defineConfig({
     prefetchAll: false,
   },
   integrations: [tailwind()],
+  server: {
+    port: 3000,
+  },
 });
