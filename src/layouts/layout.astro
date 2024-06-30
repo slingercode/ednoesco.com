@@ -37,6 +37,21 @@ const { title, description } = Astro.props;
 
 <style>
   main {
-    margin-top: var(--spacing-8);
+    margin: var(--spacing-8) auto;
+    max-width: 1024px;
+  }
+
+  @media (max-width: 600px) {
+    main {
+      padding: 0px var(--spacing-12);
+      margin: var(--spacing-8) 0px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+    main {
+      padding: 0px var(--spacing-12);
+      margin: var(--spacing-8) auto;
+    }
   }
 </style>

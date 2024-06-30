@@ -5,13 +5,23 @@ type Route = Pick<astroHTML.JSX.AnchorHTMLAttributes, "href"> & {
 
 const routes: Route[] = [
   { href: "/", text: "ednoesco" },
-  { href: "/blogs", text: "blogs" },
   { href: "/gpg", text: "gpg" },
 ];
+
+const { pathname } = Astro.url;
+
+const filteredRoutes =
+  pathname === "/" ? routes.filter(({ href }) => href !== "/") : routes;
 ---
 
 <nav>
-  {routes.map(({ href, text }) => <a href={href}>{text}</a>)}
+  {
+    filteredRoutes.map(({ href, text }) => (
+      <a href={href} data-astro-prefetch>
+        {text}
+      </a>
+    ))
+  }
 </nav>
 
 <style>
@@ -22,10 +32,17 @@ const routes: Route[] = [
   }
 
   nav > a {
+    font-size: var(--font-size-sm);
     padding-right: var(--spacing-4);
   }
 
   nav > a:last-child {
     padding-right: 0;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      padding: var(--spacing-4);
+    }
   }
 </style>
