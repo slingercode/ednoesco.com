@@ -2,12 +2,14 @@
 import Layout from "../layouts/layout.astro";
 import Markdown from "../components/markdown.astro";
 import { Content as GPG } from "../content/ednoesco/gpg.md";
+
+import "../styles/gpg.css";
 ---
 
 <Layout title="Noel Espino" description="Personal GPG">
   <Markdown>
     <div>
-      <div>
+      <div class="download-container">
         <a download href="/static/ednoesco.gpg">
           <svg
             width="15"
@@ -27,7 +29,9 @@ import { Content as GPG } from "../content/ednoesco/gpg.md";
         </a>
       </div>
 
-      <GPG />
+      <div class="code-container">
+        <GPG />
+      </div>
     </div>
   </Markdown>
 </Layout>
