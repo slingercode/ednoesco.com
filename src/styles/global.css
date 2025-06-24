@@ -96,9 +96,9 @@ body {
   padding: 0;
   letter-spacing: -0.25px;
   color: var(--text-primary);
+  font-family: var(--satoshi);
   background-color: var(--bg-primary);
   font-size: var(--font-size-base);
-  font-family: var(--satoshi-regular);
 }
 
 h1,
@@ -109,22 +109,23 @@ h5,
 h6 {
   margin: 0;
   line-height: 100%;
-  font-weight: bold;
   margin-bottom: var(--spacing-6);
-  font-family: var(--satoshi-medium), var(--satoshi-regular);
 }
 
 h1 {
+  font-weight: bold;
   letter-spacing: -1.48px;
   font-size: var(--font-size-xxxl);
 }
 
 h2 {
+  font-weight: bold;
   letter-spacing: -0.9px;
   font-size: var(--font-size-xxl);
 }
 
 h3 {
+  font-weight: 500;
   letter-spacing: -0.9px;
   font-size: var(--font-size-xl);
 }
@@ -132,6 +133,7 @@ h3 {
 h4,
 h5,
 h6 {
+  font-weight: 500;
   letter-spacing: -0.9px;
   font-size: var(--font-size-lg);
 }
@@ -154,7 +156,7 @@ p {
 a {
   text-decoration: none;
   color: var(--text-secondary);
-  font-family: var(--berkeley-mono);
+  font-family: var(--berkeley);
 }
 
 a:hover,
@@ -164,7 +166,6 @@ a:active {
 
 strong {
   font-weight: bold;
-  font-family: var(--satoshi-black);
 }
 
 ul,
@@ -189,11 +190,11 @@ br {
 
 pre,
 code {
+  font-family: var(--berkeley);
   background-color: var(--bg-code);
-  font-family: var(--berkeley-mono);
 }
 
 code {
-  border-radius: 5%;
   padding: 2px 5px;
+  border-radius: 5%;
 }

@@ -8,47 +8,71 @@ const makeFontPath = (folderName: string, fontName: string) =>
 
 <AstroFont
   config={[
+    // {
+    //   name: "SatoshiRegular",
+    //   src: [
+    //     {
+    //       style: "normal",
+    //       weight: "normal",
+    //       path: makeFontPath("Satoshi", "Satoshi-Regular.woff2"),
+    //     },
+    //   ],
+    //   preload: true,
+    //   display: "swap",
+    //   fallback: "sans-serif",
+    //   cssVariable: "satoshi-regular",
+    // },
+    // {
+    //   name: "SatoshiMedium",
+    //   src: [
+    //     {
+    //       style: "normal",
+    //       weight: "500",
+    //       path: makeFontPath("Satoshi", "Satoshi-Medium.woff2"),
+    //     },
+    //   ],
+    //   preload: true,
+    //   display: "swap",
+    //   fallback: "sans-serif",
+    //   cssVariable: "satoshi-medium",
+    // },
+    // {
+    //   name: "SatoshiBlack",
+    //   src: [
+    //     {
+    //       style: "normal",
+    //       weight: "800",
+    //       path: makeFontPath("Satoshi", "Satoshi-Black.woff2"),
+    //     },
+    //   ],
+    //   preload: true,
+    //   display: "swap",
+    //   fallback: "sans-serif",
+    //   cssVariable: "satoshi-black",
+    // },
     {
-      name: "SatoshiRegular",
+      name: "Satoshi",
       src: [
         {
           style: "normal",
           weight: "normal",
           path: makeFontPath("Satoshi", "Satoshi-Regular.woff2"),
         },
-      ],
-      preload: true,
-      display: "swap",
-      fallback: "sans-serif",
-      cssVariable: "satoshi-regular",
-    },
-    {
-      name: "SatoshiMedium",
-      src: [
         {
           style: "normal",
           weight: "500",
           path: makeFontPath("Satoshi", "Satoshi-Medium.woff2"),
         },
-      ],
-      preload: true,
-      display: "swap",
-      fallback: "sans-serif",
-      cssVariable: "satoshi-medium",
-    },
-    {
-      name: "SatoshiBlack",
-      src: [
         {
           style: "normal",
-          weight: "800",
+          weight: "bold",
           path: makeFontPath("Satoshi", "Satoshi-Black.woff2"),
         },
       ],
       preload: true,
       display: "swap",
       fallback: "sans-serif",
-      cssVariable: "satoshi-black",
+      cssVariable: "satoshi",
     },
     {
       name: "BerkeleyMono",
@@ -62,7 +86,7 @@ const makeFontPath = (folderName: string, fontName: string) =>
       preload: true,
       display: "swap",
       fallback: "monospace",
-      cssVariable: "berkeley-mono",
+      cssVariable: "berkeley",
     },
   ]}
 />
