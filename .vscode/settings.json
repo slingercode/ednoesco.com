@@ -3,6 +3,7 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   }

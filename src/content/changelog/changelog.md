@@ -2,6 +2,14 @@
 
 <br>
 
+##### v0.7.2
+
+<hr>
+
+- Update packages and **IMPORTANT REWRITE**
+
+<br>
+
 ##### v0.7.1
 
 <hr>
